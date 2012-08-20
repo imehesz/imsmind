@@ -1,0 +1,1323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/fonts.css" />
+    
+    <meta charset="utf-8" />
+    
+    <meta name="robots" content="noodp" />
+    <meta name="description" content="The Hypsometry Blog, by Christopher Boone." />
+    <meta name="google-site-verification" content="mm-Ia5CUef5bRAEBMIc1YeqhwX73FTcEcfwAK2s_9_Y" />
+    
+    <title>Open Source (Almost) Everything</title>
+  	
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/cities-of-fire.css" />
+    
+    <link rel="alternate" href="http://feeds.hypsometry.com/hypsometry/blog/articles" type="application/atom+xml" title="Hypsometry blog updates feed" />
+
+    <link rel="archives" href="http://blog.hypsometry.com/" />
+    <link rel="author" href="http://hypsometry.com/" />
+    
+    <!-- Remy Sharp's html5shiv, to make IE accept HTML5. -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body class="" id="">
+    <div id="everything">
+      <h1 id='open_source_almost_everything'>Open Source (Almost) Everything</h1>
+<p class='meta'>22 Nov 2011 - San Francisco</p>
+<p>When Chris and I first started working on GitHub in late 2007, we split the work into two parts. Chris worked on the Rails app and I worked on Grit, the first ever Git bindings for Ruby. After six months of development, Grit had become complete enough to power GitHub during our public launch of the site and we were faced with an interesting question:</p>
+
+<p>Should we open source Grit or keep it proprietary?</p>
+
+<p>Keeping it private would provide a higher hurdle for competing Ruby-based Git hosting sites, giving us an advantage. Open sourcing it would mean thousands of people worldwide could use it to build interesting Git tools, creating an even more vibrant Git ecosystem.</p>
+
+<p>After a small amount of debate we decided to open source Grit. I don&#8217;t recall the specifics of the conversation but that decision nearly four years ago has led to what I think is one of our most important core values: open source (almost) everything.</p>
+
+<h2 id='why_is_it_awesome_to_open_source_almost_everything'>Why is it awesome to open source (almost) everything?</h2>
+
+
+      <header>
+        <hgroup>
+          <h2>
+            An exploratory weblog, by <script type="text/javascript">
+              //<![CDATA[
+              <!--
+              var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+              "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+              " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+              "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+              "\"(0),1\\\"\\\\]UBWGH6V00\\\\\\\\YI01\\\\0r\\\\\\\\\\\\\\\\r6\\\\01\\\\\\\\" +
+              "\\\"\\\\\\\\\\\\77\\\\1,\\\\485++-$>7=02\\\\\\\\pm\\\\r=\\\\- 5c>9%,5(=52+0" +
+              "0\\\\\\\\//JV\\\\\\\\\\\\\\\\IQ_U^V14\\\\0Z\\\\_@P[r]\\\\\\\\0r02\\\\\\\\NJ" +
+              "AX10\\\\0F\\\\32\\\\07\\\\00\\\\\\\\14\\\\0M\\\\DNvTjlm5pyd~bl\\\\o(\\\"}fo" +
+              ";n uret}r);+)y+^(i)t(eAodrCha.c(xdeCoarChomfrg.intr=So+7;12%=;y++)y10i<f({i" +
+              "+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\"" +
+              ")"                                                                           ;
+              while(x=eval(x));
+              //-->
+              //]]>
+            </script>
+          </h2>
+
+          <h1>
+            <a href="http://hypsometry.com/" title="Go to the Hypsometry home page.">
+              Hypsometr<span>y.</span>
+            </a>
+          </h1>
+        </hgroup>
+      </header>
+      
+        <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/symbolic-code-groups-in-ruby/" title="Link to XIV. Symbolic code groups in Ruby.">
+          XIV.
+        </a>
+      </h2>
+      
+      <h1>Symbolic code groups in Ruby.</h1>
+    </hgroup>
+    
+    <p>This came from somewhere, I&#8217;m sure of it. I found it, used it, loved it, and here we are, years later, and I don&#8217;t have any recollection what that original source was, or who originally coined this simple idiom. Nonetheless, let me present to you a tiny little morsel of Ruby:</p>
+
+<pre><code>class Symbol
+  def code(&amp;block)
+    block.call
+  end
+end</code></pre>
+
+<p>Include that in your project, and you can write code that does a better job of self-documenting. For example:</p>
+
+<pre><code>:filter.code do
+  def reload_user
+    # ..
+  end
+  
+  def verify_humanness
+    # ..
+  end
+end
+
+:form.code do
+  def required_status_classname
+    # ..
+  end
+  
+  def field_wrapper_classes
+    # ..
+  end
+end</code></pre>
+
+<p>Simple Ruby syntactic sugar, helping you keep things clear and readable. Not only that, but if you&#8217;re using a block-folding text editor (such as <a href='http://manual.macromates.com/en/navigation_overview#collapsing_text_blocks_foldings'>TextMate</a>), then you can navigate through your code a little bit more easily.</p>
+    
+    <footer>
+      <time datetime="2011-02-17" pubdate="pubdate">February 17, 2011.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/goudy-on-hypsometry/" title="Link to XIII. Goudy on Hypsometry.">
+          XIII.
+        </a>
+      </h2>
+      
+      <h1>Goudy on Hypsometry.</h1>
+    </hgroup>
+    
+    <p><a href='http://hypsometry.com/' title='Go to the main Hypsometry site.'>Hypsometry</a> has a new design, inspired by <a href='http://www.designhistory.org/ArtsCrafts.html' title='Read more about the private press movement and its history.'>the private press movement</a> and its humanist reaction to the industrialization of printing in the nineteenth century.</p>
+<a href='http://hypsometry.com'>
+  <img src='/images/goudy-on-hypsometry/hypsometry-home-heading-720x264.png' height='264' alt='' width='720' />
+</a>
+<p>This design, like <a href='http://blog.hypsometry.dev/articles/hypsography-news/' title='Read about my recent redesign of Hypsography.'>my recent work</a> on <a href='http://hypsography.com/'>Hypsography</a>, makes use of <a href='http://code.google.com/p/sortsmill/' title='Go to the Google Code project page for Sorts Mill Goudy.'>Sorts Mill Goudy</a>, <a href='http://www.theleagueofmoveabletype.com/fonts/6-sorts-mill-goudy' title='Read more about the revival of Goudy Old Style, by Barry Schwartz, on the League of Moveable Type.'>Barry Schwartz&#8217;s excellent revival</a> of <a href='http://en.wikipedia.org/wiki/Frederic_W._Goudy' title='Read about Frederic Goudy on Wikipedia.'>Frederic Goudy&#8217;s</a> classic typeface <a href='http://en.wikipedia.org/wiki/Goudy_Old_Style' title='Read about Goudy Old Style on Wikipedia.'>Goudy Old Style</a>. For its titling, it features <a href='http://www.castletype.com/html/tipoteca/goudy-trajan-regular.html' title='Read about Goudy Trajan on the CastleType site.'>CastleType&#8217;s typeface</a> <a href='http://www.fontsquirrel.com/fonts/Goudy-Trajan' title='Read about Goudy Trajan on the Font Squirrel.'>Goudy Trajan</a>, which is a digital revival of Goudy&#8217;s translation of <a href='http://en.wikipedia.org/wiki/Roman_square_capitals' title='Read about Roman majuscules on Wikipedia.'>the Roman majuscules</a> found on <a href='http://penelope.uchicago.edu/~grout/encyclopaedia_romana/imperialfora/trajan/column.html' title='Read about the column and see a photograph of the majuscules as they appear there.'>Trajan&#8217;s Column.</a> (Yes, a double revival.)</p>
+
+<p>The layout is built on a simple grid. (Too simple, really, and insufficiently humanist, at this point.) I&#8217;ve used, and included, <a href='http://analog.coop/'>Analog Coop&#8217;s</a> <a href='http://hashgrid.com/'>#grid script</a>, which means that you can type <em>g</em> and see the grid; type <em>g + h</em> and have the grid stay visible; or type <em>g + f</em> to have the grid displayed on top of the site&#8217;s content.</p>
+<a href='http://hypsometry.com'>
+  <img src='/images/goudy-on-hypsometry/hypsometry-home-blurb-with-grid-720x192.png' height='192' alt='' width='720' />
+</a>
+<p>Again following in the traditions of the private presses, Hypsometry now has <a href='http://www.google.com/images?q=printer&apos;s+mark' title='See more examples of marks used by printers.'>a printer&#8217;s mark</a>, with which I&#8217;ve stamped the pages.</p>
+<a href='http://hypsometry.com'>
+  <img src='/images/goudy-on-hypsometry/hypsometry-printers-mark-72x72.png' height='72' alt='' width='72' />
+</a>
+<p>More is coming, and I have more to say about all this; but for now, this suffices.</p>
+    
+    <footer>
+      <time datetime="2011-02-03" pubdate="pubdate">February  3, 2011.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/knuth-on-digital-typography/" title="Link to XII. Knuth on digital typography.">
+          XII.
+        </a>
+      </h2>
+      
+      <h1>Knuth on digital typography.</h1>
+    </hgroup>
+    
+    <blockquote cite='http://www-cs-faculty.stanford.edu/~knuth/dt.html'>
+  <p>
+    I guess I must have ink in my veins: When I first learned about the potential of digital printing technology, I couldn't resist putting the rest of my life on hold while I tried to adapt the typographic wisdom of previous centuries to the possibilities of the present day.
+  </p>
+</blockquote><p class='blockquote-citation'>
+  &mdash; Donald Knuth, <br />
+  <a href='http://www-cs-faculty.stanford.edu/~knuth/dt.html'>
+    <cite>Digital Typography</cite>.
+  </a>
+</p>
+    
+    <footer>
+      <time datetime="2011-01-17" pubdate="pubdate">January 17, 2011.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/rubyist-static-site-generators/" title="Link to XI. Rubyist static site generators, and a historical aside.">
+          XI.
+        </a>
+      </h2>
+      
+      <h1>Rubyist static site generators, and a historical aside.</h1>
+    </hgroup>
+    
+    <p>Last fall, after years of creating highly dynamic websites and web applications, I reversed directions. Now I aim for as much static HTML as possible. It&#8217;s simpler, faster, cleaner, more elegant, easier to read, and for most projects it&#8217;s all you need.</p>
+
+<p><a href='http://hypsography.com/'>Hypsography</a> and <a href='http://hypsometry.com/'>Hypsometry</a>, for example, are both entirely static. Hand written HTML, CSS, and Javascript, served up simple and fast.</p>
+
+<p>This site, <a href='http://blog.hypsometry.com/'>the Hypsometry Blog</a>, is built with <a href='http://github.com/mojombo/jekyll'>Jekyll</a>, <a href='http://tom.preston-werner.com/'>Tom Preston-Werner&#8217;s</a> elegant little Ruby hacker blogging tool. Jekyll takes <a href='http://www.liquidmarkup.org/'>Liquid templates</a> and fills them with marked-up text, sprinkling a little <a href='http://www.yaml.org/'>YAML</a> data over the top, and outputs HTML ready for your server. That works well.</p>
+
+<p>Hypsography, however, is getting to the point where I don&#8217;t want to be maintaining all the code by hand (albeit with heavy help from <a href='http://macromates.com/'>Textmate</a>), but I also don&#8217;t want to lose the simplicity and speed of serving static files. There&#8217;s no need to migrate to a full-bore content management system, with all the configuration and maintenance hassles that inevitably entails. Jekyll&#8217;s wonderful, but it&#8217;s not usable on sites that aren&#8217;t simple blogs.</p>
+
+<p>Since Jekyll was released, a slew of static site generators written in Ruby have come along (and some have gone right along too). They all have a basic philosophy similar to <a href='http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html'>that originally outlined by Tom Preston-Werner:</a></p>
+
+<p>They all take templates and content and merge them together, creating static HTML sites ready for deployment. They tend to use YAML for configuration. Most accept multiple markup formats as input. They all can watch your directory for changes in order to rebuild the site dynamically as you work on it.</p>
+
+<p>Their differences are smaller, but important. Each has a slightly different approach to the same problem, and thus each meets a slightly different need.</p>
+
+<p>Having spent the past couple days (for the second time in six months) going through the options and evaluating them, I thought I&#8217;d summarize what I&#8217;ve found. Let me point out that all the programs discussed below seem excellent and worth investigation. There are other programs out there which seem less excellent, and I&#8217;ve ignored those here. Please let me know if I&#8217;ve missed anything, of course.</p>
+
+<p>(There is one other useful approach to all this: Writing your own generator using <a href='http://en.wikipedia.org/wiki/Rake_(software)'>Rake</a>, YAML, and <a href='http://github.com/defunkt/mustache'>Mustache</a>. This is quite appealing, but not what I&#8217;m in the market for today. <a href='http://ozmm.org/posts/static_sites_with_mustache.html'>Chris Wanstrath wrote about his approach last year</a>, if you&#8217;re interested.)</p>
+
+<p>Here follows my one-sentence summaries of all the Rubyist static site generators that I&#8217;ve looked at recently:</p>
+
+<h2 id='bonsai'><a href='http://tinytree.info/'>Bonsai.</a></h2>
+
+<p>Beautiful, simple, flexible (uses <a href='http://github.com/rtomayko/tilt'>Tilt</a> for template handling), progressive (HTML5 by default), but the current version doesn&#8217;t work out of the box and it&#8217;s intended primarily for portfolio sites. (<a href='http://tinytree.info/'>Project site</a>, <a href='http://github.com/benschwarz/bonsai'>Github</a>.)</p>
+
+<h2 id='middleman'><a href='http://wiki.github.com/tdreyno/middleman/'>Middleman.</a></h2>
+
+<p>Rails-like (in ways both good and bad), highly configurable and flexible, and includes automatic minification of CSS and Javascript, as well as other useful optimizations. (<a href='http://awardwinningfjords.com/2009/10/22/middleman.html'>Introductory post</a>, <a href='http://wiki.github.com/tdreyno/middleman/'>Github</a>.)</p>
+
+<h2 id='nanoc'><a href='http://nanoc.stoneship.org/'>Nanoc.</a></h2>
+
+<p>Extremely powerful and extensible, perhaps too much so, and prefers configuration to convention. (<a href='http://nanoc.stoneship.org/'>Project site</a>, <a href='http://github.com/ddfreyne/nanoc'>Github</a>.)</p>
+
+<h2 id='staticmatic'><a href='http://staticmatic.rubyforge.org/'>Staticmatic.</a></h2>
+
+<p>Simple, clean, but strangely <a href='http://haml-lang.com/'>Haml</a>-dependent. (<a href='http://staticmatic.rubyforge.org/'>Ruby Forge</a>, <a href='http://github.com/staticmatic/staticmatic'>Github</a>.)</p>
+
+<h2 id='webby'><a href='http://webby.rubyforge.org/'>Webby.</a></h2>
+
+<p>Simple, flexible, quite Jekyllish. (<a href='http://webby.rubyforge.org/'>Ruby Forge</a>, <a href='http://github.com/TwP/webby'>Github</a>.)</p>
+
+<h2 id='webgen'><a href='http://webgen.rubyforge.org/'>Webgen.</a></h2>
+
+<p>Powerful, extensible, slightly rigid in operation. (<a href='http://webgen.rubyforge.org/'>Ruby Forge</a>, <a href='http://github.com/gettalong/webgen'>Github</a>.)</p>
+
+<h2 id='not_quite_a_conclusion'>Not quite a conclusion.</h2>
+
+<p>That&#8217;s the list, and those are my notes. You can probably guess which I&#8217;m going to try out on Hypsography, but whether or not you can, you&#8217;ll be hearing more about the results here.</p>
+
+<h2 id='a_historical_aside'>A historical aside.</h2>
+
+<p>Since <a href='/articles/three-things-about-pivot/'>I wrote once before about static site generation</a>, I&#8217;ve taken this opportunity to begin restoring old articles to the Hypsometry Blog. As such, there is now an article zero: <a href='/articles/nulla/'>Nulla</a>, actually, since <a href='http://en.wikipedia.org/wiki/Roman_numerals#Zero'>the Romans didn&#8217;t really have notation for zero.</a></p>
+
+<p>Nulla serves as a marker. All articles older than it are reprints, numbered negatively (which is also an anachronism, but hey), and probably slightly altered from their original forms. All articles newer are indeed new, part of <a href='/articles/ashland-mccarthy-and-the-field-guide/'>this latest iteration of the Hypsometry Blog.</a></p>
+
+<p>As time passes, I&#8217;ll continue working my way through the Hypsometry archives, digging out other older articles perhaps worthy of a second look. Or at least worthy of having their links preserved. Don&#8217;t take them too seriously &#8211; they&#8217;re oldies, but not necessarily goodies.</p>
+    
+    <footer>
+      <time datetime="2010-07-22" pubdate="pubdate">July 22, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/art-not-ads/" title="Link to X. Art, not ads.">
+          X.
+        </a>
+      </h2>
+      
+      <h1>Art, not ads.</h1>
+    </hgroup>
+    
+    <a href='http://www.adfreeblog.org/'>
+  <img src='http://www.adfreeblog.org/art_not_ads.jpg' alt='Art Not Ads' />
+</a>
+    
+    <footer>
+      <time datetime="2010-06-29" pubdate="pubdate">June 29, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/the-serfdom-of-crowds/" title="Link to IX. The serfdom of crowds.">
+          IX.
+        </a>
+      </h2>
+      
+      <h1>The serfdom of crowds.</h1>
+    </hgroup>
+    
+    <p>Sometime in the mid-nineties, around the time I stopped reading <a href='http://en.wikipedia.org/wiki/Mondo_2000'>Mondo 2000</a>, <a href='http://www.jaronlanier.com/'>Jaron Lanier</a> stopped annoying me. I assumed he was still out there, being all far out and dreaded and inter-disciplinary, but he no longer forced his way into my attention, and was thus out of mind.</p>
+
+<p>Apparently he&#8217;s not yet out of sight. He has in the interim, however, become more articulate, more insightful, and more interesting. This past January his newest book, <a href='http://books.google.com/books?id=sqNWqEB8Ie0C'><em>You Are Not a Gadget,</em></a> was published, and in February <a href='http://harpers.org/'><em>Harper&#8217;s Magazine</em></a> published an excerpt called <a href='http://harpers.org/archive/2010/02/0082805'>&#8216;The serfdom of crowds.&#8217;</a></p>
+
+<p>(The complete article is only available online to <em>Harper&#8217;s</em> subscribers, but there is <a href='http://www.scribd.com/doc/25828774/James-Lanier-The-Serfdom-of-Crowds'>an illicit version available on Scribd</a>, in beautiful HTML5. That said, I recommend that you go to <a href='http://nces.ed.gov/surveys/libraries/librarysearch/'>your local library</a> and read the damn thing in print.)</p>
+
+<p>Let me quote from it at length, to give you something of its full flavor. Here is Lanier discussing the collapse of the financial markets in 2008 and how that related to, and derived from, the essential inequality of the current structure of the web:</p>
+
+<blockquote>
+<p>True believers in the hive mind seem to think that no number of layers of abstraction in a financial system can dull the system’s efficacy. The crowd works for free, and statistical algorithms supposedly take the risk out of making bets if you are a lord of the cloud. But who is that lord who owns the cloud that connects the crowd? Not just anybody. A lucky few (for luck is all that can possibly be involved) will own it. Entitlement has achieved its singularity and become infinite.</p>
+</blockquote>
+
+<p>What has allowed this infinite entitlement, this neo-feudalism? We have, in a thousand little ways:</p>
+
+<blockquote>
+<p>People degrade themselves all the time in order to make machines seem smart. We have repeatedly demonstrated our species’s bottomless ability to lower our standards to make information technology good.</p>
+</blockquote>
+
+<p>I would amend the last sentence to refer more generally to &#8216;technology&#8217;, rather than just to &#8216;information technology,&#8217; for this lowering of standards is wide-spread. For example, it is precisely what allows us to claim that items fabricated from synthetic chemicals and compounds and shaped roughly into the appearance of traditional foodstuffs are, in any way, actually food.</p>
+
+<p>Lanier is focused here specifically on the web side of this argument, not on the general case; but many of the things he writes apply more generally. For example:</p>
+
+<blockquote>
+<p>Enlightened designers leave open the possibility of metaphysical specialness either in humans or in the potential for for unforeseen creative processes that we can’t yet capture in software systems. That kind of modesty is the signature quality of being human-centered.</p>
+</blockquote>
+
+<p>To return to my example, this is the difference between manufacturing bread in factories and baking loaves in a wood-fired oven. (Brief aside: When did we begin using <a href='http://www.etymonline.com/index.php?term=manufacture'>&#8216;manufactured&#8217;</a> to mean &#8216;not manufactured?&#8217;)</p>
+
+<p>The former method asserts that there is nothing special about having a human bake bread; everything involved can be simplified down such that mechanical and software systems can handle it. The latter method, on the other hand, recognizes that there is potential inherent in the baking process that only a baker can explore. Choosing the first method devalues the second &#8211; devalues the method, devalues the bread, and devalues both the baker and the eater.</p>
+
+<p>To return to Lanier, on this devaluation and its causes:</p>
+
+<blockquote>
+<p>What computerized analysis of all the country’s school tests has done to education is exactly what Facebook has done to friendships. In both cases, life is turned into a database. Both degradations are based on the same philosophical mistake, which is the belief that computers can presently represent human thought or human relationships. These are things computers cannot currently do.</p>
+</blockquote>
+
+<p>And on the resultant effects of this devaluation, this forced technological simplification, this database as life:</p>
+
+<blockquote>
+<p>When technologists deploy a computer model of something like learning or friendship in a way that has an effect on real lives, they are relying on faith. When they ask people to live their lives through their models, they are potentially reducing life itself.</p>
+</blockquote>
+    
+    <footer>
+      <time datetime="2010-06-23" pubdate="pubdate">June 23, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/html5-and-safari-reader/" title="Link to VIII. HTML5 and Safari Reader.">
+          VIII.
+        </a>
+      </h2>
+      
+      <h1>HTML5 and Safari Reader.</h1>
+    </hgroup>
+    
+    <p>As you know, <a href='http://www.apple.com/safari/'>Safari 5</a> came out last week. Two of its best features are <a href='http://www.apple.com/safari/whats-new.html#reader'>the Safari Reader</a> and <a href='http://www.apple.com/safari/whats-new.html#html5'>much improved support for HTML5</a>.</p>
+
+<p>Reader you know about. You might not know, however, that <a href='http://rakaz.nl/2010/06/html5-test-updated-how-well-does-your-browser-support-html5-now.html'>Safari 5 now outscores all other browsers</a> on <a href='http://html5test.com/'>the HTML5 test</a>. That&#8217;s exciting. It&#8217;s not complete support, but it&#8217;s a lot of the essentials. And, after all, the spec itself isn&#8217;t even complete yet.</p>
+
+<p>Another thing you might not know is that I&#8217;m working almost exclusively in <a href='http://en.wikipedia.org/wiki/Html5'>HTML5</a> these days. If there&#8217;s a reason not to use it, I&#8217;m not; but it&#8217;s my default and my preference. That means that my photography portfolio site &#8211; <a href='http://hypsography.com/'>Hypsography</a> &#8211; is all HTML5 under the surface. And that, in turn, means that <a href='http://hypsography.com/news/'>the news articles I write for Hypsography</a> make appropriate use of <a href='http://www.whatwg.org/specs/web-apps/current-work/#the-article-element'>the <code>article</code> element</a>, along with many other semantic elements. One <code>&lt;article&gt;</code> equals one article. Simple and clear.</p>
+
+<p>Let&#8217;s review what <a href='http://www.apple.com/safari/whats-new.html#reader'>Apple says about Safari Reader</a>:</p>
+
+<blockquote>
+<p>As you browse the web, Safari detects if you’re on a web page with an article. Click the Reader icon in the Smart Address Field, and the article appears instantly in one continuous, clutter-free view. You see every page of the article — whether two or twenty.</p>
+</blockquote>
+
+<p>Totally. And it works really well, at least when you&#8217;re reading <a href='http://nytimes.com/'>the Times</a>. When you&#8217;re reading Hypsography, however, it works a little less well:</p>
+<img src='/images/html5-and-safari-reader/year-review-reader-top-720x408.png' height='408' alt='' width='720' />
+<p>That&#8217;s not ideal. The ice photograph that&#8217;s intruding in the middle of the text is enclosed in an <a href='http://www.whatwg.org/specs/web-apps/current-work/#the-aside-element'><code>aside</code></a>, which should be considered &#8220;tangentially related to the content around&#8221; it, but Safari apparently doesn&#8217;t get that. But at least it&#8217;s readable, somewhat. And, looking under the surface with the Web Inspector, this misinterpretation looks fixable via CSS.</p>
+
+<p>What&#8217;s worse is what happens when you scroll to the end of the article:</p>
+<img src='/images/html5-and-safari-reader/year-review-reader-bottom-720x408.png' height='408' alt='' width='720' />
+<p>Safari has decided that the article ends there. Arbitrarily decided, it seems, since the article does not end there. In fact, of the five sections into which that article &#8211; <a href='http://hypsography.com/news/end-of-the-year-review-2009/'>An end of the year review, inspired by Mr. Dalton Rooney</a> &#8211; is divided, Safari has chosen to include only two of them. The first and the third sections. Naturally.</p>
+
+<p>Let me clarify this a smidge more: The five sections into which this article is divided are delineated by <a href='http://www.whatwg.org/specs/web-apps/current-work/#the-section-element'><code>section</code></a> tags, all of which are contained with the one parent <code>article</code>. This is semantic, this is simple, and this is clear. You might figure it&#8217;d be easy too.</p>
+
+<p>Oh well.</p>
+
+<p>If anybody out there has an understanding of what precisely Safari Reader looks for in an article, please let me know. Thanks, and good luck.</p>
+    
+    <footer>
+      <time datetime="2010-06-14" pubdate="pubdate">June 14, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/hypsometrys-simple-portfolio/" title="Link to VII. Hypsometry's simple portfolio.">
+          VII.
+        </a>
+      </h2>
+      
+      <h1>Hypsometry's simple portfolio.</h1>
+    </hgroup>
+    
+    <p>After a diapause of several years, <a href='http://hypsometry.com/#portfolio'>Hypsometry again has a portfolio section.</a></p>
+<a href='http://hypsometry.com/#portfolio'>
+  <img src='/images/hypsometrys-simple-portfolio/hpm-portfolio-fritzhorstman-720x240.png' height='240' alt='' width='720' />
+</a>
+    
+    <footer>
+      <time datetime="2010-06-07" pubdate="pubdate">June  7, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/true-small-capitals-with-font-face/" title="Link to VI. True small capitals with @font-face.">
+          VI.
+        </a>
+      </h2>
+      
+      <h1>True small capitals with @font-face.</h1>
+    </hgroup>
+    
+    <p>One small, but quite good, reason to rejoice at the coming of a widely useable <code>@font-face:</code> <strong>True small capitals are now possible on the web.</strong></p>
+
+<p>Small capitals are, <a href='http://ilovetypography.com/2008/02/20/small-caps/' title='Read about small capitals on I Love Typography.'>as Alec Julien put it</a>, &#8220;upper case glyphs drawn at a lower case scale.&#8221; They are not, however, simply regular capitals shrunk down; they are properly their own font, with their own characteristics, designed to work with both regular capital and lower case letters.</p>
+
+<p>To be more precise: 1. The cap height of a small capital is the same as, or just slightly larger than, the x-height of the typeface&#8217;s lower case letters. 2. The weight of the strokes of a small capital are comparable, visually speaking, to the weight of the strokes of the typeface in general, at the size being used. 3. The proportions of a small capital are also comparable, visually speaking, to the proportions of the characters of the typeface in general, at the size being used.</p>
+
+<p>Two implications of the latter two points are that the strokes and proportions of a given small capital letter will be heavier and more spread out than the strokes and proportions of the same letter upper cased, at the same point size. This is because small capitals have the form of regular capital letters, but the characteristics of the lower case.</p>
+
+<p>Unfortunately, true small capitals are hard to come by these days. Computer software, as a rule, uses fake small capitals, created simply by scaling down upper case letters so that they are smaller than the originals, but larger than the associated lower case. This is true of web browsers as well as word processors, desktop publishing applications, and vector editors.</p>
+
+<p>For instance, the second line above should look about like this, using true, properly designed small capitals: <img src='/images/true-small-capitals-with-font-face/first-paragraph-true-small-capitals.png' alt='' /> But, had I not <code>@font-face</code> to rely on, your web browser&#8217;s fake small capitals would make it look more like this: <img src='/images/true-small-capitals-with-font-face/first-paragraph-fake-small-capitals.png' alt='' /> Not at all the same thing, clearly. The proportions of the second example are all wrong &#8211; simultaneously too big and too thin, tracked too tightly, and rather difficult to read. The first example is balanced, strong, eminently legible.</p>
+
+<p>Using true small capitals on the web was not possible until recently, at least not with type that is actually type. Let&#8217;s look at how it works, and also, along the way, at several ways to fake small capitals. Comparing them all side by side will make even clearer the import of the differences I described above.</p>
+
+<h2 id='1_setting_the__property_to_'>1. Setting the <code>font-variant</code> property to <code>small-caps</code>.</h2>
+
+<p>This is what should work. <a href='http://www.w3.org/TR/CSS21/fonts.html#small-caps' title='Read about the font-variant property in the CSS standard on the W3C website.'>The W3C CSS standard tells us that <code>font-variant: small-caps</code> will instruct the browser to do the right thing.</a> &#8220;A value of &#8216;small-caps&#8217; selects a small-caps font&#8221;, it says.</p>
+
+<p>This is how your browser interprets <code>font-variant: small-caps</code>:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-variant'>
+    Giambattista Bodoni: February 16, 1740 in Saluzzo &ndash; November 29, 1813 in Parma.
+  </span>
+</p>
+<p>That looks okay, I guess. In comparison to the small capitals, the upper case letters and numerals look overly heavy. Some of the small capital letters &#8211; the <em>t</em> and the <em>m</em>, for instance &#8211; have strokes that are so thin as to almost vanish.</p>
+
+<p>Let&#8217;s look at a second example, to make the differences clearer:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-variant-partial'>
+    A <span>a</span> a &mdash; M <span>m</span> m &mdash; X <span>x</span> x
+  </span>
+</p>
+<p>Now you can see quite clearly that the cap height of the small capitals is substantially larger than the x-height of the lower case letters, to say nothing of the overshoot of letters like <em>a</em> and <em>m</em>. Also, you can see how the proportions and weights of these fake small capitals match neither the upper case nor the lower case. All in all, this style of fake small capitals works quite poorly.</p>
+
+<p>But why is this? The typeface in which this page is set &#8211; <a href='http://iginomarini.com/fell/the-revival-fonts/' title='Go to the IM Fell revival page.'>IM Fell Great Primer</a> &#8211; has a small capitals variant, so why do the browsers not use it? After all, the CSS standard says that they should when <code>font-variant: small-caps</code> is used.</p>
+
+<p>Sadly, no browser has actually implemented this. Instead of looking to see whether true small capitals are available, they all jump to the next portion of the standard:</p>
+
+<blockquote>
+<p>It is acceptable (but not required) if the small-caps font is a created by taking a normal font and replacing the lower case letters by scaled upper case characters.</p>
+</blockquote>
+
+<p>I&#8217;m not sure who, precisely, thinks that that is acceptable, but even if it were, it is surely not acceptable to ignore existing small capital fonts created by proper methods in favor of bogus ones created on the fly.</p>
+
+<h2 id='2_the_joe_clark_method'>2. The Joe Clark method.</h2>
+
+<p>Faced with the problems above, <a href='http://joeclark.org/' title='Go to joeclark.org.'>Joe Clark</a> suggested <a href='http://joeclark.org/' title='Go to joeclark.org.'>a simple alternative</a>: Convert the text to capitals and reduce its size. This is, of course, exactly what the browsers do when you specify <code>font-variant: small-caps</code>. The slight theoretical advantage provided by Joe Clark&#8217;s method is that you can more precisely and carefully control how much the fake small capitals are scaled down, leading, perhaps to better matching of heights, proportions, and weights. A simple example:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-joe-clark'>
+    Giambattista Bodoni: February 16, 1740 in Saluzzo &ndash; November 29, 1813 in Parma.
+  </span>
+</p>
+<p>Of course, applied like that, Joe Clark&#8217;s method forces all letters and numerals to small capitals, even if that&#8217;s not what you desired. A slightly more sophisticated version of his method would apply the technique selectively &#8211; say, to letters that are already lower cased. Let&#8217;s assume that you have an automatic way to do so &#8211; a CMS plugin, for example, or a clever piece of Javascript:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-clever-joe-clark'>
+    G<span>iambattista</span> B<span>odoni</span>:
+    F<span>ebruary</span> 16, 1740 <span>in</span> S<span>aluzzo</span> &ndash;
+    N<span>ovember</span> 29, 1813 <span>in</span> P<span>arma</span>.
+  </span>
+</p>
+<p>This, of course, is a total pain in the ass, and it makes a bit of a hash of the text&#8217;s HTML. On the other hand, it does allow for more precise control of the size of the fake small capitals, which might be helpful.</p>
+
+<p>To see that more clearly, here is a third example &#8211; the same as the one in &#167;1:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-clever-joe-clark'>
+    A <span>a</span> a &mdash; M <span>m</span> m &mdash; X <span>x</span> x
+  </span>
+</p>
+<p>You see the same problems as in &#167;1: The Joe Clark small capitals are too big and their proportions are wrong. The weights, however, are not quite as bad. Let&#8217;s look at a fourth example, comparing the <code>font-variant</code> method and the Joe Clark method, in that order, to see how the two compare:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-variant'>a</span>
+  <span class='small-capitals-joe-clark'>a</span> &mdash;
+  <span class='small-capitals-font-variant'>m</span>
+  <span class='small-capitals-joe-clark'>m</span> &mdash;
+  <span class='small-capitals-font-variant'>x</span>
+  <span class='small-capitals-joe-clark'>x</span>
+</p>
+<p>The proportions and weights of Joe Clark&#8217;s fake small capitals are better than those of the <code>font-variant</code> method, but only because the letters themselves are even larger. Hard to call that an improvement.</p>
+
+<h2 id='3_the_nick_shinn_method'>3. The Nick Shinn method.</h2>
+
+<p>This problem of how to fake small capitals when no proper ones exist, or the software will not let you access them, is not unique to the web. <a href='http://shinntype.com/' title='Go to shinntype.com.'>Nick Shinn</a> has suggested that, in addition to capitalizing and reducing the size of the text, <a href='http://typophile.com/node/56161' title='Read about Nick Shinn style fake small capitals on Typophile.'>you should increase its weight.</a> This allows for making the small capitals a little smaller &#8211; a little closer to the actual x-height of the typeface &#8211; while better preserving their weights and proportions.</p>
+
+<p>A simple example:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-nick-shinn'>
+    Giambattista Bodoni: February 16, 1740 in Saluzzo &ndash; November 29, 1813 in Parma.
+  </span>
+</p>
+<p>A more sophisticated example, again &#8211; as in &#167;2 &#8211; imagining some sort of automated helper, and ignoring the complexity of the technique and the hash it makes of the HTML:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-clever-nick-shinn'>
+    G<span>iambattista</span> B<span>odoni</span>:
+    F<span>ebruary</span> 16, 1740 <span>in</span> S<span>aluzzo</span> &ndash;
+    N<span>ovember</span> 29, 1813 <span>in</span> P<span>arma</span>.
+  </span>
+</p>
+<p>This looks better in some ways, and worse in others. It is still basically unacceptable. Perhaps in some contexts, with some combinations of typeface and size, this might work well. Here, despite the improvement in small capital size, the overly heavy weight is too much. Of course, the typeface you see here has no true bold weight, so your browser is faking it; perhaps it is too much to hope that a faked heavy weight could help us, in turn, fake small capitals.</p>
+
+<p>Let&#8217;s compare upper case, lower case, and Nick Shinn small capitals:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-clever-nick-shinn'>
+    A <span>a</span> a &mdash; M <span>m</span> m &mdash; X <span>x</span> x
+  </span>
+</p>
+<p>Correct height and proportions with excessively heavy weight is no better than incorrect height. And it turns out that the x-heights are not in fact correct: They only appear correct at this size of type. Try resizing the text in your browser window, and you&#8217;ll see that the evenness is limited to the sizes I&#8217;ve set here.</p>
+
+<p>A fourth example, this time comparing the <code>font-variant</code> method, the Joe Clark method, and the Nick Shinn method, presented in that order:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-variant'>a</span>
+  <span class='small-capitals-joe-clark'>a</span>
+  <span class='small-capitals-nick-shinn'>a</span> &mdash;
+  <span class='small-capitals-font-variant'>m</span>
+  <span class='small-capitals-joe-clark'>m</span>
+  <span class='small-capitals-nick-shinn'>m</span> &mdash;
+  <span class='small-capitals-font-variant'>x</span>
+  <span class='small-capitals-joe-clark'>x</span>
+  <span class='small-capitals-nick-shinn'>x</span>
+</p>
+<p>Of these three, the browser scaling method seems the best, despite is many flaws. None produce good results, and it&#8217;s far and away the simplest.</p>
+
+<h2 id='4_using_'>4. Using <code>@font-face</code>.</h2>
+
+<p>There is an additional problem here, besides the technical failings of the browsers and the limits of what you can express using CSS: Proper small capital fonts are a rarity. Type designers design them, foundries sell them, but few non&#8211;professionals have them on their computers.</p>
+
+<p>The typeface in which the Hypsometry Blog is set is <a href='http://iginomarini.com/fell/the-revival-fonts/' title='Go to the IM Fell revival page.'>IM Fell Great Primer</a>, a beautiful typeface first cut by Peter de Walpergen, acquired by John Fell in the late 1680s, and digitally revived by <a href='http://iginomarini.com/' title='Go to iginomarini.com.'>Igino Marini</a>. In its original metal, IM Fell Great Primer consisted of romans, italics, and small capitals. Sr Marini has created OpenType versions of all three, and made them freely available. As such, I can use <code>@font-face</code> to specify the use of the small capitals variant.</p>
+
+<p>An example:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-face'>
+    Giambattista Bodoni: February 16, 1740 in Saluzzo &ndash; November 29, 1813 in Parma.
+  </span>
+</p>
+<p>And, again, a comparison with the upper and lower cases:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-face-partial'>
+    A <span>a</span> a &mdash; M <span>m</span> m &mdash; X <span>x</span> x
+  </span>
+</p>
+<p>Glorious. The cap height of the small capital <em>x</em> is precisely the same as the x-height of the lower case <em>x</em> &#8211; and this holds true even if you resize the text away from how I&#8217;ve set it here. The cap heights of the small capitals <em>a</em> and <em>m</em> are smaller than the overshoot of the lowercase <em>a</em> and <em>m</em>. The visual weight and proportions of the small capitals are all quite similar to those of the lower case letters, even while the forms of the small capitals remain true to the appearance of the upper case.</p>
+
+<p>Just to be absolutely clear, let&#8217;s see all four methods lined up side by side &#8211; <code>font-variant: small-caps</code> on the left, followed by the Joe Clark method, the Nick Shinn method, and the true small capitals of <code>@font-face</code>:</p>
+<p class='small-capitals-example'>
+  <span class='small-capitals-font-variant'>a</span>
+  <span class='small-capitals-joe-clark'>a</span>
+  <span class='small-capitals-nick-shinn'>a</span>
+  <span class='small-capitals-font-face'>a</span> &mdash;
+  <span class='small-capitals-font-variant'>m</span>
+  <span class='small-capitals-joe-clark'>m</span>
+  <span class='small-capitals-nick-shinn'>m</span>
+  <span class='small-capitals-font-face'>m</span> &mdash;
+  <span class='small-capitals-font-variant'>x</span>
+  <span class='small-capitals-joe-clark'>x</span>
+  <span class='small-capitals-nick-shinn'>x</span>
+  <span class='small-capitals-font-face'>x</span>
+</p>
+<p>The <code>@font-face</code> method is far and away the best. Unfortunately, it is the best in appearance and the worst to use.</p>
+
+<p>The biggest problem, as mentioned above, is that few typefaces have proper small capital variants. Of those that do, some include them within the regular roman file, which puts them off limits to web use. <a href='http://en.wikipedia.org/wiki/Small_capitals#Unicode' title='Read about small capitals in Unicode on Wikipedia.'>Unicode currently does not define a place for small capitals</a>, which means that browser cannot access them.</p>
+
+<p>For example, you&#8217;re likely to have <a href='http://typedia.com/explore/typeface/linotype-didot/' title='Read about Linotype Didot on Typedia.'>the typeface Didot</a> on your computer. The roman of that Didot includes small capitals, but as glyphs 264&#8211;389, located in the Unicode range called &#8220;Glyph Variants&#8221;, which you cannot access within a browser.</p>
+
+<p>Assuming that you&#8217;re using a typeface that includes proper small capitals, and that those small capitals are included as their own distinct font file, then you must declare a <code>@font-face</code> rule that makes use of them. <a href='http://www.w3.org/TR/css3-fonts/#the-font-face-rule' title='Read about the @font-face rule on the W3C website.'>In theory,</a> you would do have already defined your romans and italics something like this:</p>
+
+<pre><code>@font-face {
+  font-family: &quot;IM Fell Great Primer&quot;;
+  src: local(&quot;IM FELL Great Primer&quot;);
+}
+
+@font-face {
+  font-family: &quot;IM Fell Great Primer&quot;;
+  font-style: italic;
+  src: local(&quot;IM FELL Great Primer Italic&quot;);
+}</code></pre>
+
+<p>In other words, we&#8217;re defining a font family named IM Fell Great Primer, the roman of which can be found locally as &#8220;IM FELL Great Primer&#8221;, and the italic of which as &#8220;IM FELL Great Primer Italic.&#8221; The browser loads both of those fonts, and when a reference to <code>font-family: IM Fell Great Primer</code> is found it uses the former when <code>font-style</code> is <code>normal</code>, and the latter when <code>italic.</code></p>
+
+<p>According to the W3C standard, there should be no difference when defining a small capitals variant:</p>
+
+<pre><code>@font-face {
+  font-family: &quot;IM Fell Great Primer&quot;;
+  font-variant: small-caps;
+  src: local(&quot;IM FELL Great Primer SC&quot;);
+}</code></pre>
+
+<p>In other words, the font referred to by this <code>@font-face</code> rule is the small capitals variant of the IM Fell Great Primer family, and can be found locally under the name &#8220;IM FELL Great Primer SC.&#8221; When the browser encounters a reference to <code>font-family: IM Fell Great Primer</code> with <code>font-variant: small-caps</code>, it should then go ahead and use the font referenced above. An example of such a reference:</p>
+
+<pre><code>p strong {
+  font-variant: small-caps;
+}</code></pre>
+
+<p>However, the browsers do not yet understand this. <a href='https://developer.mozilla.org/en/CSS/@font-face' title='Read about @font-face on the Mozilla Developer Center.'>Firefox, for instance, only understands <code>font-weight</code> and <code>font-style</code> within <code>@font-face</code> rules.</a> That means that you cannot rely on the browsers to automatically use the proper small capitals variant, even when you have explicitly told them the necessary details. Instead, you must define a redundant rule like this:</p>
+
+<pre><code>@font-face {
+  font-family: &quot;IM Fell Great Primer SC&quot;;
+  src: local(&quot;IM FELL Great Primer SC&quot;);
+}</code></pre>
+
+<p>And then use it like this:</p>
+
+<pre><code>p strong {
+  font-family: &quot;IM Fell Great Primer SC&quot;;
+}</code></pre>
+
+<p>That way you have explicitly told your browser where to find the small capitals variant and when to use it. And, when forced in this fashion, the browsers do finally get things right.</p>
+
+<h2 id='5_other_details'>5. Other details.</h2>
+
+<p>It&#8217;s a bit convoluted, all this, and I haven&#8217;t even touched on how to properly prepare your font files for browser use, or how to really make use of <code>@font-face</code>. To summarize, <a href='http://www.fontsquirrel.com/' title='Go to fontsquirrel.com.'>use the Font Squirrel.</a></p>
+
+<p>To see the CSS for all the methods discussed above, <a href='http://github.com/cboone/hypsometric-css/tree/master/typography/small-capitals/' title='Go to the small capitals section of the Hypsometric CSS project on Github.'>take a look at my Hypsometric CSS project.</a> If you have any questions or suggestions, do let me know.</p>
+<style type='text/css'>
+  #everything p.small-capitals-example {
+    margin: 1.5em auto; /* 24px = 1 line, centered */
+
+    text-indent: 0;
+    text-align: center;
+  }
+  
+  #everything p.small-capitals-example span.small-capitals-font-variant,
+  #everything p.small-capitals-example span.small-capitals-font-variant-partial span {
+    font-variant: small-caps;
+  }
+  
+  #everything p.small-capitals-example span.small-capitals-joe-clark,
+  #everything p.small-capitals-example span.small-capitals-clever-joe-clark span {
+    font-size: smaller;
+    text-transform: uppercase;
+  }
+  
+  #everything p.small-capitals-example span.small-capitals-nick-shinn,
+  #everything p.small-capitals-example span.small-capitals-clever-nick-shinn span {
+    font-size: 0.6875em; /* 11px */
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  
+  #everything p.small-capitals-example span.small-capitals-font-face,
+  #everything p.small-capitals-example span.small-capitals-font-face-partial span {
+    font-family: "IM FELL Great Primer SC";
+  }
+</style>
+    
+    <footer>
+      <time datetime="2010-01-15" pubdate="pubdate">January 15, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/hypsography-news/" title="Link to V. Hypsography News.">
+          V.
+        </a>
+      </h2>
+      
+      <h1>Hypsography News.</h1>
+    </hgroup>
+    
+    <p>Over at <a href='http://hypsography.com/' title='Go to hypsography.com.'>Hypsography</a> my work is continuing apace, and that pace is increasing. I&#8217;m continuing my explorations of <a href='http://books.google.com/books?id=44Yq6UplAbAC' title='Read about *An Essay on Typography* by Eric Gill, on Google Books.'>humane typography</a> there. The site is now set in <a href='http://code.google.com/p/sortsmill/' title='Go to the Google Code project page for Sorts Mill Goudy.'>Sorts Mill Goudy</a>, <a href='http://www.theleagueofmoveabletype.com/fonts/6-sorts-mill-goudy' title='Read more about the revival of Goudy Old Style, by Barry Schwartz, on the League of Moveable Type.'>an excellent revival</a> of <a href='http://en.wikipedia.org/wiki/Frederic_W._Goudy' title='Read about Frederic Goudy on Wikipedia.'>Frederic Goudy&#8217;s</a> incomparable <a href='http://en.wikipedia.org/wiki/Goudy_Old_Style' title='Read about Goudy Old Style on Wikipedia.'>Goudy Old Style</a>.</p>
+<a href='http://hypsography.com'>
+  <img src='/images/hypsography-news/hypsography-heading-720x72.png' height='72' alt='' width='720' />
+</a>
+<p>If you view the site using <a href='http://www.mozilla.com/' title='Download the latest version of Firefox.'>a recent version of Firefox</a>, you&#8217;ll even see that the <em>f</em> and <em>i</em> of <em>field</em> are joined into one ligature &#8211; as they should be. Firefox is currently the only browser that supports <a href='http://en.wikipedia.org/wiki/Opentype#Advanced_typography' title='Read about OpenType and its typographic abilities on Wikipedia.'>serious OpenType typographic enhancements</a>. Where by <em>serious</em> I mean <a href='http://opentype.info/blog/2008/06/14/kerning-and-opentype-features-in-firefox-3/' title='Read about the newly acquired typographic abilities of Firefox on the blog OpenType.'>kerning</a> and <a href='http://www.dria.org/wordpress/archives/2008/06/10/651/' title='Read more about the newly acquired typographic abilities of Firefox on dria.org.'>ligatures</a>. Yes, 460 years have passed since Gutenberg began printing with moveable type, and we are just now returning to those basic capabilities.</p>
+
+<p>At any rate, Sorts Mill Goudy is a beautifully rendered typeface. <a href='http://crudfactory.com/' title='Go to The Crud Factory, the main website of Barry Schwartz.'>Barry Schwartz</a> is its author, and he has made it available under both <a href='http://en.wikipedia.org/wiki/SIL_Open_Font_License' title='Read about the Open Font License on Wikipedia.'>the Open Font License</a> and <a href='http://www.opensource.org/licenses/mit-license.php' title='Read about the MIT License on the Open Source Initiative site.'>the MIT License</a>: <a href='http://www.theleagueofmoveabletype.com/fonts/6-sorts-mill-goudy' title='Read more about the revival of Goudy Old Style, by Barry Schwartz, on the League of Moveable Type.'>OFL Sorts Mill Goudy</a> and <a href='http://code.google.com/p/sortsmill/' title='Go to the Google Code project page for Sorts Mill Goudy.'>MIT Sorts Mill Goudy</a>. You can also find it <a href='http://typedia.com/explore/typeface/sorts-mill-goudy/' title='Read about Sorts Mill Goudy on the Typedia.'>in the Typedia</a>, along with another excellent, though less completely realized, Goudy revival by Mr Schwartz: <a href='http://typedia.com/explore/typeface/goudy-bookletter-1911/' title='Read about Goudy Bookletter 1911 on the Typedia.'>Goudy Bookletter 1911</a>.</p>
+
+<p>I used <a href='http://www.fontsquirrel.com/' title='Go to the Font Squirrel website.'>the Font Squirrel&#8217;s</a> <a href='http://www.fontsquirrel.com/fontface/generator' title='Go to the @font-face generator on fontsquirrel.com.'><code>@font-face</code> generator</a> to prepare the files for Hypsography, and I highly recommend it. To make the process even simpler, the Font Squirrel already has <a href='http://www.fontsquirrel.com/fonts/OFL-Sorts-Mill-Goudy' title='Go to the OFL Sorts Mill Goudy page on Font Squirrel.'>OFL Sorts Mill Goudy</a> in its archive, along with <a href='http://www.fontsquirrel.com/fontfacedemo/OFL-Sorts-Mill-Goudy' title='Go to the OFL Sorts Mill Goudy @font-face demo page on fontsquirrel.com, where you can download a pre-made @font-face kit.'>a pre-generated <code>@font-face</code> kit.</a> Or, if you prefer, both <a href='http://the-crud-factory.kernest.com/fonts/ofl-sorts-mill-goudy-regular' title='Go to the OFL Sorts Mill Goudy page on kernest.com.'>Kernest</a> and <a href='http://typekit.com/fonts/494' title='Go to the the OFL Sorts Mill Goudy page on typekit.com.'>Typekit</a> also include Mr Schwartz&#8217;s Goudy revival.</p>
+
+<p>From the information available on the project site, Sorts Mill Goudy appears to be a work in progress. Nonetheless, it seems quite ready for use right now. Using <a href='http://nicewebtype.com/' title='Go to Nice Web Type.'>Tim Brown&#8217;s</a> <a href='http://webfontspecimen.com/' title='Go to the Web Font Specimen site, by Tim Brown.'>web font specimen</a>, I&#8217;ve put up <a href='http://hypsography.com/typefaces/specimens/mill-sorts-goudy/' title='Go to the Sorts Mill Goudy web font specimen on Hypsography.'>a demonstration page for Sorts Mill Goudy on Hypsography</a>, for your further inspection.</p>
+
+<p>To return to my initial point: <a href='http://hypsography.com/' title='Go to hypsography.com.'>Hypsography</a> has a new look, <a href='http://hypsography.com/news/' title='Go to the News section on hypsography.com.'>a new section for news and other ephemera</a>, and <a href='http://hypsography.com/guide/forests/' title='Go to the Forests page of the Hypsography guide.'>a newly added tetraptych.</a> Enjoy.</p>
+<a href='http://hypsography.com'>
+  <img src='/images/hypsography-news/hypsography-forests-720x144.jpg' height='144' alt='' width='720' />
+</a>
+    
+    <footer>
+      <time datetime="2010-01-07" pubdate="pubdate">January  7, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/wildcat-strike/" title="Link to IV. Wildcat Strike.">
+          IV.
+        </a>
+      </h2>
+      
+      <h1>Wildcat Strike.</h1>
+    </hgroup>
+    
+    <a href='https://www.adbusters.org/campaigns/bnd'>
+  <img src='/images/wildcat-strike/wildcat.png' height='360' alt='Wildcat strike.' width='668' />
+</a>
+    
+    <footer>
+      <time datetime="2009-11-27" pubdate="pubdate">November 27, 2009.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/html5-default-styles/" title="Link to III. HTML5 Default Styles.">
+          III.
+        </a>
+      </h2>
+      
+      <h1>HTML5 Default Styles.</h1>
+    </hgroup>
+    
+    <p>While <a href='/articles/reset-stylesheets-and-html5/' title='Read my blog post about my updated reset stylesheet.'>updating my reset stylesheet</a> last week, I realized that if I wanted to reset <a href='http://www.w3.org/TR/html5-diff/#new-elements' title='Read about the new HTML5 elements on the W3C website.'>the new HTML5 elements</a> I would have to determine precisely how they were supposed to be styled. Which proved to be a challenge, since <a href='http://en.wikipedia.org/wiki/Comparison_of_layout_engines_%28HTML_5%29#Elements' title='A table, on Wikipedia, detailing which of the new HTML5 elements are supported by which browsers. The short version: Almost none of them.'>no browser yet supports anything like the full array of new elements and styles.</a></p>
+
+<p>Luckily, <a href='http://www.whatwg.org/specs/web-apps/current-work/' title='Read the latest draft of the HTML5 standard, at the WHATWG site.'>the current HTML5 specification</a> contains <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html' title='Read section 11 of the HTML5 standard, on rendering, at the WHATWG site.'>extremely detailed descriptions of how browsers should render HTML documents.</a> These are not requirements, of course, but rather &#8220;a set of suggestions.&#8221; These descriptions, found in <em>&#167;11 Rendering</em>, are of reasonable expectations; and thus it seems reasonable, in turn, that I base my expectations for the future behavior of browsers on them. (Realizing full well how deeply foolhardy that might be.)</p>
+
+<p>Within the many suggestions listed in &#167;11 &#8211; and they are many and detailed &#8211; there is one in particular that is relevant here: <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html#the-css-user-agent-style-sheet-and-presentational-hints' title='Read section 11.2 of the HTML5 standard, on CSS rendering, at the WHATWG site. '><em>&#167;11.2 The CSS user agent style sheet and presentational hints.</em></a> This section walks through the varieties of default styles and describes how each HTML element is to be handled. Specific CSS is provided, and additional instructions and suggestions are noted. From time to time, the additional notes refer to styles best handled by CSS, though for the most part they don&#8217;t.</p>
+
+<p>Regarding the new HTML5 elements, my goals are to:</p>
+
+<ol>
+<li>Set up the appropriate display properties, so that blocks display as blocks by default.</li>
+
+<li>Make sure that any elements that shouldn&#8217;t be visible are not.</li>
+
+<li>Counteract, in a speculative, preventative manner, any styling that browsers are likely to apply.</li>
+</ol>
+
+<p>&#167;11 contains all the information I need to meet these goals. It describes the display types of the elements, including their visibility, and it describes all the other styling that should be applied by the browsers, once they support HTML5 more completely.</p>
+
+<p>Therefore I compiled all the recommended CSS into one stylesheet. In doing so, I realized that the styles recommended are entirely too comprehensive. Styles for <a href='http://www.w3.org/TR/html5-diff/#absent-elements' title='Read about which elements have been deprecated in HTML5, on the W3C website.'>deprecated elements</a> and <a href='http://www.w3.org/TR/html5-diff/#absent-attributes' title='Read about which attributes have been deprecated in HTML5, on the W3C website.'>elements modified by deprecated attributes</a> are listed, so I removed them from my stylesheet. CSS bindings for each element are listed in <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html#bindings' title='Read about how CSS bindings work in HTML5, at the WHATWG site.'>&#167;11.4</a> &#8211; but <a href='https://developer.mozilla.org/En/CSS/-moz-binding' title='Read about the -moz-binding CSS property, on the Mozilla Developer Center site.'>only Gecko supports that functionality</a>, and it currently only supports it in a proprietary way; so I left out the bindings styles too.</p>
+
+<p>In other ways, the recommended CSS does not go far enough. Two sets of styles, describing the appearance of <code>h1</code> elements nested within the new semantic content elements, are so complicated that the draft standard only summarizes how they are supposed to work. Both <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html#margins-and-padding' title='Read section 11.2.3 of the HTML5 standard, on rendering margins and padding, at the WHATWG site.'>&#167;11.2.3</a> and <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html#fonts-and-colors' title='Read section 11.2.5 of the HTML5 standard, on rendering fonts and colors, at the WHATWG site.'>&#167;11.2.5</a> note that the styling of an <code>h1</code> element varies depending on its context. Of course, <code>h1</code> has its own default styling &#8211; <code>font-size: 2.00em</code>, for instance. But when you have an <code>h1</code> nested within a <code>section element</code> &#8211; <code>section h1</code>, that is &#8211; it should receive <code>font-size: 1.50em</code>. And if you have another heading, nested even further - <code>article section aside h1</code>, for example &#8211; that should have <code>font-size: 1.00em</code> applied. This is important, since <a href='http://boblet.tumblr.com/post/134276674/html5-structure2' title='Read Oli Studholme'>HTML5 has radically redefined how we are supposed to use headings.</a></p>
+
+<p>Sadly, the draft standard authors have left it as an exercise to the reader to actually write the relevant styles, for all the nesting depths. I have done so, though I&#8217;m not entirely sure I&#8217;ve done so correctly. The permutations involved are reasonably complicated, particularly since <code>section</code> elements can nest within each other, though none of the others can.</p>
+
+<p>There is only one additional change that I&#8217;ve made, a quite small one, but potentially useful. <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/rendering.html#display-types' title='Read section 11.2.2 of the HTML5 standard, on display types, at the WHATWG site.'>&#167;11.2.2 Display types</a> describes how each element should be displayed by default &#8211; <code>head</code> is hidden, <code>blockquote</code> is a block, <code>table</code> is a table, <code>ruby</code> elements are displayed like <a href='http://en.wikipedia.org/wiki/Ruby_character' title='Read about ruby characters on Wikipedia.'>ruby characters</a>, <em>et cetera.</em> The list of block level elements, however, does not include the <code>details</code> element.</p>
+
+<p>An element new to HTML5, <em>&#8220;the details element represents a disclosure widget from which the user can obtain additional information or controls&#8221;</em>, <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-details-element' title='Read about the details element at the WHATWG site.'>according to &#167;4.11.1.</a> It is what the standard calls an interactive element, and is meant to act as a wrapper for other content which may be displayed or hidden as the reader prefers. The usage example provided &#8211; as well as the description of how to use the <code>details</code> element &#8211; suggests wrapping it around a <code>dt</code> and a <code>dd</code>, as if it were a special type of <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-dl-element' title='Read about the dl element at the WHATWG site.'>definition list.</a> As such, it seems appropriate to style the <code>details</code> element as a block, and I&#8217;ve done so.</p>
+
+<p>You can see <a href='http://github.com/cboone/hypsometric-css/blob/master/html5/html5-defaults.css' title='Read html5-defaults.css on GitHub.'>the stylesheet that resulted from my compilation and editing on GitHub</a>, along with <a href='http://github.com/cboone/hypsometric-css/tree/master/html5/' title='Read my notes about the latest version of html5-defaults.css, on GitHub.'>some notes.</a> You&#8217;re free to use it as you like. As always, please do let me know if you notice any problems or have any suggestions.</p>
+    
+    <footer>
+      <time datetime="2009-11-22" pubdate="pubdate">November 22, 2009.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/reset-stylesheets-and-html5/" title="Link to II. Reset Stylesheets and HTML5.">
+          II.
+        </a>
+      </h2>
+      
+      <h1>Reset Stylesheets and HTML5.</h1>
+    </hgroup>
+    
+    <p>There are two important reset stylesheets out there, on the loose: <a href='http://meyerweb.com/eric/tools/css/reset/' title='Eric Meyer'>Eric Meyer&#8217;s <code>reset.css</code></a> and <a href='http://developer.yahoo.com/yui/3/cssreset/' title='YUI 3 CSS Reset.'>YUI&#8217;s CSS Reset</a>. Both are highly useful, though they differ slightly in the details of their approach and implementation. Eric intends for you to take his CSS and alter it to your needs, creating a reset stylesheet that works for your own projects. He describes it as:</p>
+
+<blockquote>
+<p>The reset styles given here are intentionally very generic.&#8230; In other words, this is a starting point, not a self-contained black box of no-touchiness.</p>
+</blockquote>
+
+<p>Yahoo, on the other hand, is aiming for a more complete resetting. They write:</p>
+
+<blockquote>
+<p>The foundational CSS Reset removes the inconsistent styling of HTML elements provided by browsers. This creates a dependably flat foundation to built upon.</p>
+</blockquote>
+
+<p>For a couple of years now, since <a href='http://meyerweb.com/eric/thoughts/2007/04/12/reset-styles/' title='Read Eric'>Eric first described his ideas</a>, I&#8217;ve used my own <code>reset.css</code>. A combination of Eric&#8217;s original code and YUI&#8217;s more comprehensive styles, modified here and there as needed. It has served well on many projects.</p>
+
+<p>Now that <a href='http://www.whatwg.org/specs/web-apps/current-work/' title='Read the latest draft of the HTML5 standard, at the WHATWG site.'>HTML5</a> is at last upon us, my <code>reset.css</code> no longer quite fits the bill. For one thing, there are <a href='http://www.w3.org/TR/html5-diff/#new-elements' title='Read about the new HTML5 elements.'>new elements</a> that bring with them new default styles, which of course need resetting. For a second, <a href='http://www.w3.org/TR/html5-diff/#absent-elements' title='Read about which elements have been deprecated in HTML5.'>other elements have been deprecated</a>, and so I no longer need to worry about them. (Of course, you might, since your project might be different.) And for a third, and possibly most important, <a href='http://en.wikipedia.org/wiki/Comparison_of_layout_engines_%28HTML_5%29#Elements' title='A table, on Wikipedia, detailing which of the new HTML5 elements are supported by which browsers. The short version: Almost none of them.'>few of the new elements are supported sufficiently by the browsers</a>.</p>
+
+<p>Given all this, I&#8217;ve updated my reset stylesheet. It ignores deprecated elements, and gives the new ones display styles as needed. This also is not a self-contained box of resetting, but I do find it quite useful. You can <a href='http://github.com/cboone/hypsometric-css/blob/master/reset/reset.css' title='Read my reset.css on GitHub.'>find it on GitHub</a>, along with <a href='http://github.com/cboone/hypsometric-css/blob/master/reset/' title='Read my notes about the latest iteration of my reset.css, on GitHub.'>some additional notes</a>. You&#8217;re free to use it as you like. As always, please do let me know if you notice any problems or have any suggestions.</p>
+    
+    <footer>
+      <time datetime="2009-11-16" pubdate="pubdate">November 16, 2009.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/ashland-mccarthy-and-the-field-guide/" title="Link to I. Ashland, McCarthy, and the Field Guide.">
+          I.
+        </a>
+      </h2>
+      
+      <h1>Ashland, McCarthy, and the Field Guide.</h1>
+    </hgroup>
+    
+    <p>It&#8217;s not yet a new year, but I have a new home, this blog has a new life, and I&#8217;ve begun work on a new &#8212; though long overdue &#8212; project. The project is the realization of <a href='http://hypsography.com'>Hypsography, my field guide</a>. This blog was given new form based on the beautiful typography of <em>Cities of the Plain</em>. And I&#8217;ve moved back across the country, to <a href='http://www.kswild.org/ksregion' title='Read more about the Klamath-Siskiyou bioregion.'>a valley limited by the Cascade and Siskiyou mountain ranges</a>.</p>
+
+<p>Let&#8217;s begin with the mountains. They call this valley the Rogue, but the Rogue River is north of here. The Klamath is to the south. Both rivers run from the Cascades to the Pacific, along vaguely parallel courses. Between the two lies a range of mountains called the Siskiyous, which are the northernmost of the Klamath ranges. The Klamath ranges extend inland from the Coast, covering the territory of what are &#8212; to the north and south, that is &#8212; the Coast ranges, though they are not two parts of the same system of mountains in geological or historical terms. Just south of here, around the border, the Siskiyous finish their eastern push where they collide with the Cascades. Ashland, the town where I now live, sits in the valley of a creek that flows into the Rogue, just north of that Siskiyou-Cascade intersection.</p>
+<a href='http://thesfi.org/Page.asp?NavID=397' title='Read the paper from which this map is drawn: Vegetation of the Siskiyou Mountains, Oregon and California, R.H. Whittaker, Ecological Monographs, 1960, Volume 30, Number 3, Page 280.'>
+  <img src='/images/ashland-mccarthy-and-the-field-guide/whittaker-map-excerpt-720x240.png' height='240' alt='Hand drawn map of the Siskiyou and Cascade mountains, in Oregon.' width='720' />
+</a>
+<p>And, as you can see, <a href='http://blog.hypsometry.com/'>the Hypsometry blog</a> is back, for yet another go round. I&#8217;ve lost count of what incarnation this is &#8212; perhaps the sixth? The driving force here, this time, is simplicity.</p>
+
+<p>The design was inspired by the gorgeous work done on Cormac McCarthy&#8217;s border trilogy; in particular, the title page of the first edition of <em>Cities of the Plain</em>, the concluding volume of the three.</p>
+
+<p>In technical terms also, this site is as simple as it has ever been. Since I began designing and building websites &#8212; five years ago now &#8212; I&#8217;ve worked with a wide array of techniques for producing blogs. None has ever been quite right for my needs, so I&#8217;m trying yet another. With luck, this new system will have a little more sticking power. Whether it does or does not, expect my notes on the subject sometime soon.</p>
+
+<p><a href='http://hypsography.com'>Hypsography</a> is my newest project, though I&#8217;ve been planning it for a couple years now. I have a hard time summarizing exactly <em>what</em> it is that I&#8217;m working on, in part because there&#8217;s so much to come and &#8212; so far &#8212; so little to show. I&#8217;ve written <a href='http://hypsography.com/about/' title='Read more about Hypsography, on Hypsography.'>a few words about it on the site itself</a>. But really, it&#8217;d be better if <a href='http://hypsography.com'>you just took a look yourself</a>.</p>
+<a href='http://hypsography.com'>
+  <img src='/images/ashland-mccarthy-and-the-field-guide/hypsography-moonlit-718x310.jpg' height='312' alt='Excerpt from a pair of photographs published on Hypsography.' width='720' />
+</a>
+    
+    <footer>
+      <time datetime="2009-11-07" pubdate="pubdate">November  7, 2009.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/nulla/" title="Link to Nulla. ">
+          Nulla.
+        </a>
+      </h2>
+      
+      <h1></h1>
+    </hgroup>
+    
+    <p>This article serves an imaginary purpose: Dividing the old Hypsometry from the new. All articles older than this one are on their second or third go round the course; all articles newer are fresh, on their first legs.</p>
+
+<p>Thus, do not take the old ones too seriously. They are preserved here, in internautical amber, for reference, for humor, and to help keep the links alive.</p>
+    
+    <footer>
+      <time datetime="2010-07-22" pubdate="pubdate">July 22, 2010.</time>
+      <span class="place">Ashland, Oregon.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/forgot-password/" title="Link to -I. On passwords, forgetfulness, and ease of use.">
+          -I.
+        </a>
+      </h2>
+      
+      <h1>On passwords, forgetfulness, and ease of use.</h1>
+    </hgroup>
+    
+    <!-- <img src="/images/forgot-password/feeding.jpg" alt="" height="640" width="479" /> -->
+<h2 id='a_problem'>A problem.</h2>
+
+<p>Every site that allows password sign in has a little link on its sign in page. Sometimes it reads as a question: <em>Forgot your password?</em> Sometimes a first person statement: <em>I forgot my password</em>. Sometimes it&#8217;s just a terse fragment: <em>Forgot password</em>.</p>
+
+<p>You click it and are taken to another page, where you can ask for a new password to be emailed to you. On the forgot-my-password page you have to enter your email address. Typically the form on that page is extremely simple: Some explanatory text, a text input field, and a submit button.</p>
+
+<p>When the web application receives the submitted form, it checks its database to find the submitted email address. Assuming it finds the address, the application updates the user&#8217;s password and emails them a notice about it. If it doesn&#8217;t find the address, it returns the user to the same page and complains about the failure.</p>
+
+<p>All of which is simple, straightforward, well established custom. Almost every web application has this feature, and this feature works in almost exactly the same manner across the board.</p>
+
+<p>But there&#8217;s one problem here. It&#8217;s not uncommon for a user, hoping to sign in to a site, to enter his email address and then realize that he&#8217;s forgotten his password. In other words, it&#8217;s not uncommon for a user to realize that he&#8217;s only got half of the needed data after having already entered the first half.</p>
+
+<p>What happens then? He finds the expected <em>Forgot password</em> link, clicks it, and is whisked off to the forgot-my-password page. And then has to enter his email address again.</p>
+
+<p>This certainly isn&#8217;t a large problem. People type their email addresses into forms all day, every day. Lots of people use form managers to do it for them. (Though the form managers probably remember their passwords too, so they&#8217;re not in this bind in the first place.) How long does it take? A few seconds, at most. How much trouble is it? Not much.</p>
+
+<p>But why cause your users any trouble at all? Even a little trouble is more than necessary.</p>
+
+<h2 id='a_solution'>A solution.</h2>
+
+<p>The solution I&#8217;m using on our new site is simple. The short explanation: The forgot-my-password link uses Javascript to grab the value of the email address already entered, then appends it, as a query parameter, to the forgot-my-password URL.</p>
+
+<p>The forgot-my-password link looks like this:</p>
+
+<pre><code>&lt;a href=&quot;/account/forgot_password&quot; class=&quot;forgot_password&quot;&gt;
+  Forgot password
+&lt;/a&gt;</code></pre>
+
+<p>We&#8217;ve rolled our own <a href='http://en.wikipedia.org/wiki/Unobtrusive_Javascript'>unobtrusive JavaScript</a> library, but it functions in many ways like <a href='http://danwebb.net/'>Dan Webb&#8217;s</a> <a href='http://lowpro.stikipad.com/'>Low Pro</a>. Using that, I registered a behavior handler for the forgot-my-password link:</p>
+
+<pre><code>Event.addBehavior({
+  &quot;a.forgot_password&quot;:
+    Account.Behavior.forgotPasswordBehavior
+});</code></pre>
+
+<p>In other words, all links with a class of <code>forgot_password</code> get extended with the behaviors defined in <code>Account.Behavior.forgotPasswordBehavior.</code> That behavior is simple:</p>
+
+<pre><code>Account.Behavior = {
+  forgotPasswordBehavior: {
+    onclick: function() {
+      if ($F(&quot;email&quot;) != &quot;&quot;) {
+        this.href = this.href + &quot;?&quot; +
+          $(&quot;email&quot;).serialize();
+      }
+    }
+  }
+}</code></pre>
+
+<p>In other words, <code>forgotPasswordBehavior</code> defines an <code>onclick</code> handler that rewrites the relevant element&#8217;s <code>href</code> to append whatever the user has entered in the <code>email</code> field. It uses <a href='http://prototypejs.org/'>Prototype</a> to <a href='http://prototypejs.org/api/utility/dollar-f'>get the value of the field</a> and <a href='http://prototypejs.org/api/form/element/serialize'>rewrite it in <code>name=value</code> format</a>, so that it can be passed as a URL query parameter. And it only does its work if the user has actually entered something in the <code>email</code> field. No point in adding the useless <code>?email=</code> to the URL.</p>
+
+<p>Then, in the <code>forgot_password.rhtml</code> view, the email field is generated like this:</p>
+
+<pre><code>&lt;%= form.text_field(:email,
+  :value =&gt; h(params[:email])) %&gt;</code></pre>
+
+<p>Which generates the appropriate field using the email passed as a URL parameter as its value, if one exists.</p>
+
+<p>Any user who has forgotten his password and wants to request a new one has implicitly declared his desire to use your site, and to use it now. Seems like anything you can do to help him with that is a good thing.</p>
+    
+    <footer>
+      <time datetime="2008-02-24" pubdate="pubdate">February 24, 2008.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/nihil/" title="Link to -II. On hunches, Ruby, Rails, why the lucky stiff, numbers, their absence, the absence of objects, nothingness, and nihilism.">
+          -II.
+        </a>
+      </h2>
+      
+      <h1>On hunches, Ruby, Rails, why the lucky stiff, numbers, their absence, the absence of objects, nothingness, and nihilism.</h1>
+    </hgroup>
+    
+    <!-- !http://farm3.static.flickr.com/2004/2225459910_3db10bd652_m.jpg!:http://flickr.com/photos/cboone/2225459910/ -->
+<p>Today I was working on a view helper that creates a link to show a list. Something like the following:</p>
+
+<pre><code>def list_control(options = {})
+  options = do_stuff_with_the_parameters(options)
+  render(:partial =&gt; &quot;link/list_control&quot;, :locals =&gt; options)
+end</code></pre>
+
+<p>One option you can pass in is <code>new_count</code>, which is the number of new items in the list. The <code>new_count</code> parameter, however, is optional, since only some lists care about the newness of their items. If there&#8217;s no <code>new_count</code>, then the list control doesn&#8217;t talk about it at all. And <code>new_count</code> can, of course, be <code>0</code>, and when it&#8217;s <code>0</code> the list control notes that in the <code>title</code> attribute but nowhere else. (So that the information is still there, and you can access it if you care, but it&#8217;s invisible most of the time.) Only if <code>new_count</code> exists and is greater than <code>0</code> do we display it in the link&#8217;s name.</p>
+
+<p>Since Ruby lets you check to see if an object is <a href='http://ruby-doc.org/core/classes/Object.html#M000340'><code>nil?</code></a>, or if it&#8217;s <a href='http://ruby-doc.org/core/classes/Numeric.html#M000183'><code>zero?</code></a>, or if it&#8217;s <code>empty?</code> (<a href='http://ruby-doc.org/core/classes/Array.html#M002200'><code>Array</code></a>, <a href='http://ruby-doc.org/core/classes/Hash.html#M002888'><code>Hash</code></a>, and <a href='http://ruby-doc.org/core/classes/String.html#M000791'><code>String</code></a>, among many others), I figured there&#8217;d be some easy way of checking to see if <code>new_count</code>&#8217;s either <code>nil</code> or <code>0</code>.</p>
+
+<p>Well, to save you some <a href='http://www.pragprog.com/titles/ruby'>Pickaxe</a> thumbing and some <a href='http://www.google.com/search?q=ruby+nil+0+blank%3F'>Googling</a>, there ain&#8217;t.</p>
+
+<p>Way back in 2005, <a href='http://whytheluckystiff.net/'>why the lucky stiff</a> suggested that <a href='http://redhanded.hobix.com/inspect/objectBlank.html'>Ruby be extended to include <code>Object#blank?</code></a>. (<a href='http://rcrchive.net/rcr/show/295'>The actual Ruby change request</a> has vanished from <a href='http://rcrchive.net/'>the RCRchive</a>, so why&#8217;s write-up of it seems to be the only extant discussion.) He proposed the following:</p>
+
+<pre><code>class Object
+  def blank?
+    if respond_to? :empty?
+      empty?
+    elsif respond_to? :zero?
+      zero?
+    else
+      !self
+    end
+  end
+end</code></pre>
+
+<p>In other words, why&#8217;s <code>Object#blank?</code> looks to see if an object can be empty, and if so checks whether it is, in fact, empty. If the object can&#8217;t be empty but can be zero, then <code>Object#blank?</code> checks whether it is, in fact, zero. If the object can&#8217;t be empty or zero, then <code>Object#blank?</code> returns the negation of the object, which will be <code>true</code> if the object is <code>nil</code> or <code>false</code>, and <code>false</code> otherwise.</p>
+
+<p>In other other words, why&#8217;s <code>Object#blank?</code> checks an object for all the ways in which it can be nothing, and returns <code>true</code> if any of them return <code>true</code>.</p>
+
+<p>In other other other words, why&#8217;s <code>Object#blank?</code> is exactly what I wanted.</p>
+
+<p>No wonder <a href='http://redhanded.hobix.com/inspect/objectBlank.html'>he said</a> &#8220;I use this code in nearly all of my web application projects.&#8221;</p>
+
+<p>So I went ahead and used <code>count.blank?</code>, then waited for the tests to start screaming at me. Strangely, they didn&#8217;t.</p>
+
+<p><a href='http://www.google.com/search?q=rails+blank%3F'>Back to Mister Google</a>. Turns out that <a href='http://www.rubyonrails.org/core'>the clever buggers on Rails core</a> had already added <a href='http://dev.rubyonrails.org/browser/trunk/activesupport/lib/active_support/core_ext/blank.rb'>support for <code>blank?</code></a>. That&#8217;s nice, I thought; they&#8217;re a step ahead of me.</p>
+
+<p>So I went ahead and wrote the code that does one thing if <code>new_count</code> doesn&#8217;t exist, another if it exists and is <code>0</code>, and another if it exists and is not <code>0</code>. And the code failed.</p>
+
+<p><a href='http://dev.rubyonrails.org/browser/trunk/activesupport/lib/active_support/core_ext/blank.rb'>Back to the Rails Trac</a>. Turns out that when the clever buggers on Rails core implemented why&#8217;s idea they left out the bit where <code>0</code> indicates blankness. <code>empty?</code> means blank, <code>nil</code> means blank, <code>false</code> means blank, but <code>0</code> means not blank.</p>
+
+<p>Okay. That&#8217;s legitimate. Not what I need, but legitimate.</p>
+
+<p><a href='http://redhanded.hobix.com/inspect/objectBlank.html#comments'>In the comments on why&#8217;s post</a>, people thought of a lot of alternate names for <code>blank?</code>. I thought about it for a second, and realized that <code>nihil?</code> struck my fancy. Thus, <code>Object#nihil?</code>:</p>
+
+<pre><code>class Object
+  def nihil?
+    if respond_to?(:empty?)
+      empty?
+    elsif respond_to?(:zero?)
+      zero?
+    else
+      not self
+    end
+  end
+end</code></pre>
+
+<p>I threw it into <code>/lib/nihil.rb</code> and added <code>require &#39;nihil&#39;</code> to the app&#8217;s initializer, and that was that. Onward.</p>
+    
+    <footer>
+      <time datetime="2008-01-30" pubdate="pubdate">January 30, 2008.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/yaml-aliases/" title="Link to -III. On repetition, YAML, errors, and yelling.">
+          -III.
+        </a>
+      </h2>
+      
+      <h1>On repetition, YAML, errors, and yelling.</h1>
+    </hgroup>
+    
+    <!-- <img src="/images/yaml-aliases/extreme-croquet.jpg" alt="" height="640" width="479" /> -->
+<p>On <a href='http://hypsometry.com/portfolio/rejaw' title='Now an old project. Read more about Rejaw on the Hypsometry portfolio.'>our new project</a> we&#8217;re relying heavily on <a href='http://yaml.org/'>YAML.</a> Not for <a href='http://en.wikipedia.org/wiki/Internationalization'>internationalization purposes</a> (though that&#8217;s one possible benefit of our approach), but rather to keep things like class names and IDs consistent throughout the various views and controllers, and throughout the HTML, CSS, and Javascript. (More on that later.)</p>
+
+<p>One thing that&#8217;s been annoying me, however, is how much I need to repeat myself in the <code>strings.yaml</code> file. For instance, I find myself writing things like:</p>
+
+<pre><code>friends_classname: &quot;friends&quot;
+friends_behavior: &quot;friends&quot;
+friends_id: &quot;friends&quot;</code></pre>
+
+<p>It turns out that YAML can easily handle this. As <a href='http://www.yaml.org/spec/1.1/#id857577'>the spec</a> puts it:</p>
+
+<blockquote>
+<p>Repeated nodes are first identified by an anchor (marked with the ampersand &#8211; “&amp;”), and are then aliased (referenced with an asterisk &#8211; “*”) thereafter.</p>
+</blockquote>
+
+<p>So the above YAML can be written like this:</p>
+
+<pre><code>friends_classname: &amp;friends &quot;friends&quot;
+friends_behavior: *friends
+friends_id: *friends</code></pre>
+
+<p>And both will work exactly the same.</p>
+
+<p>I realize, of course, that the second example is actually more verbose than the first. But I&#8217;m not trying to avoid repetition to reduce the number of characters used; I&#8217;m trying to decrease the likelihood of subtle errors, and thereby decrease the difficulty of debugging.</p>
+
+<p>In the first case, if I made a typo like <code>friends_id: freinds</code>, <code>friends_id</code> would be wrong, and things would fail silently. In the second case, a similar typo, like <code>friends_id: *freinds</code>, would fail completely. YAML will give a <code>BadAlias</code> error, and my app will break, and Rails will yell at me.</p>
+
+<p>I like loud errors: they save time.</p>
+    
+    <footer>
+      <time datetime="2008-01-29" pubdate="pubdate">January 29, 2008.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/rails-asset-timestamping-2/" title="Link to -IV. On Rails defaults, asset timestamping, and debugging dynamically generated Javascript.">
+          -IV.
+        </a>
+      </h2>
+      
+      <h1>On Rails defaults, asset timestamping, and debugging dynamically generated Javascript.</h1>
+    </hgroup>
+    
+    <p>Hard to believe I&#8217;ve got to write about this again. Remember <a href='/articles/rails-asset-timestamping/'>when I last talked about Rails and caching and asset timestamping?</a> Well, here we are a year and a half later, and there&#8217;s more to say.</p>
+
+<p>Working on <a href='http://hypsometry.com/portfolio/rejaw/'>our new project at Infoteria,</a> we&#8217;ve got a lot of Javascript going on. We&#8217;re generating some of that dynamically (using <a href='http://www.ruby-doc.org/stdlib/libdoc/erb/rdoc/'>ERB templates</a> and some custom fanciness). And, of course, we&#8217;re using <a href='http://www.getfirebug.com/js.html'>the unbeatable Firebug JS debugger</a>.</p>
+
+<p>Unfortunately, the default Rails behavior (<a href='/articles/rails-asset-timestamping/'>as described in my earlier article</a>) is to force a crude sort of asset timestamping by appending a query string to each asset&#8217;s filename. So every time we make a change to one of these dynamic Javascript files, Rails sees that a change has been made and appends a new query string. Which has the result of making it look like a new file, to the browser and to Firebug. Which, in turn, means that any breakpoints we&#8217;ve set in the last version of the file get ignored in the new version. Which makes debugging impossible.</p>
+
+<p>Luckily, <a href='http://dev.rubyonrails.org/changeset/5335'>Rails has improved</a> since I wrote that earlier article. You can now set <code>RAILS_ASSET_ID</code> to whatever you want, and if you set it to an empty string Rails will not append a query string at all.</p>
+
+<p>In other words, to turn off Rails asset timestamping entirely, add the following to your <code>environment.rb:</code></p>
+
+<pre><code>ENV[&quot;RAILS_ASSET_ID&quot;] = &quot;&quot;</code></pre>
+
+<p>Or put it in <a href='http://ryandaigle.com/articles/2007/2/23/what-s-new-in-edge-rails-stop-littering-your-evnrionment-rb-with-custom-initializations'>the appropriate initializer</a>, if you&#8217;re using Rails 2.</p>
+
+<p>PS: I&#8217;ve actually got a ton more to say on this subject. The asset timestamping that Rails uses is ineffective, and their newfangled asset caching stuff is inadequate. We did a lot of work coming up with a better solution for <a href='http://lingr.com/'>Lingr</a>, and we&#8217;ve done even more work on <a href='http://hypsometry.com/portfolio/rejaw/'>our new project</a>. All in all, our current solution is pretty nice, allowing for dynamic CSS and JS generation, mashing up of files, caching, asset timestamping, all with a solid framework that understands quite complex combinations of page location, rendering device, and user status. More on that when I get a chance.</p>
+
+<p>PPS: Apparently I used to spell <em>geez</em> &#8220;jeez&#8221;. Interesting.</p>
+    
+    <footer>
+      <time datetime="2007-12-10" pubdate="pubdate">December 10, 2007.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/webkit-transform/" title="Link to -V. On WebKit fanciness.">
+          -V.
+        </a>
+      </h2>
+      
+      <h1>On WebKit fanciness.</h1>
+    </hgroup>
+    
+    <p><a href='http://webkit.org/'>WebKit</a> is kicking ass. It&#8217;s getting more use: First <a href='http://www.apple.com/iphone/'>the iPhone</a>, and now <a href='http://code.google.com/android/'>Android</a>. More attention <a href='http://webkit.org/blog/143/webkit-in-the-news/'>from the bloggers</a>. <a href='http://www.alistapart.com/articles/cssatten'>Amazing</a> <a href='http://webkit.org/blog/124/downloadable-fonts/'>downloadable font support</a>. Futuristic <a href='http://www.whatwg.org/specs/web-apps/current-work/'><span class='caps'>HTML5</span></a> features: <a href='http://webkit.org/blog/126/webkit-does-html5-client-side-database-storage/'>Clientside database storage</a>, along with a slick query browser, as well as <a href='http://webkit.org/blog/140/html5-media-support/'>sophisticated media embedding and controlling</a>.</p><p>But what&#8217;s got me most excited is how the WebKit team is pushing <span class='caps'>CSS</span> out of its rut. In the past few weeks they&#8217;ve implemented a group of related features allowing for powerful <span class='caps'>CSS</span>-based display manipulation.</p><p>Before I get into any details, just take a look at the following examples. (Of course, to see them properly, you&#8217;ll need <a href='http://nightly.webkit.org/'>a recent WebKit nightly build</a>.) And be sure you hover over the paragraphs.</p><style>
+  p.webkit_test
+  {
+    width: 10em;
+    margin: 0 auto;
+    padding: 1em;
+    
+    opacity: 0.5;
+    color: gray;
+    background: whitesmoke;
+    border: 1px solid lightgray;
+    -webkit-transition: all 1s ease-in-out;
+    
+    font: 1.4em Gill Sans;
+    text-align: center;
+  }
+  
+  .scale { -webkit-transform: scale(2); }
+  .rotate { -webkit-transform: rotate(45deg); }
+  .translate
+  {
+    opacity: 1 !important;
+    -webkit-transform: translate(5em);
+  }
+  .skew { -webkit-transform: skew(0, -45deg); }
+  
+  p.webkit_test:focus,
+  p.webkit_test:hover
+  {
+    color: whitesmoke;
+    background: gray;
+    -webkit-transform: none;
+  }
+</style><p class='webkit_test'>Testing this newfangled fanciness.</p><p class='webkit_test scale'>This one is scaled by 2.</p><p class='webkit_test translate'>This one is translated by 5em.</p><p class='webkit_test rotate'>This one is rotated by 45&deg;.</p><p class='webkit_test skew'>This one is skewed by 0, -45&deg;.</p><p>In case you can&#8217;t see what&#8217;s going on here &#8211; and you really should check this out; it&#8217;s only a download away &#8211; all but the first paragraph are transformed, in the manners described. But the best part is that when you hover over a paragraph the transformation is removed, in a 1 second long animation. (The colors reverse too, just for kicks.)</p><p>This is accomplished through two extensions to <span class='caps'>CSS</span>: <code>-webkit-transform</code> and <code>-webkit-transition</code>. The <code>-webkit-transform</code> property allows you to transform your objects, and <code>-webkit-transition</code> allows you to animate any <span class='caps'>CSS</span> display property. <a href='http://en.wikipedia.org/wiki/Dave_Hyatt'>Dave Hyatt</a> described it <a href='http://webkit.org/blog/138/css-animation/#comments'>thus</a>:</p><blockquote>
+	<p>The simplest kind of animation that we’ve added support for is called a transition. Normally when the value of a <span class='caps'>CSS</span> property changes, the rendered result is instantly updated, with the element in question changing immediately from the old property value to the new property value. Transitions describe how to instead execute an animation from the old state to the new state over time.</p>
+</blockquote><p>That&#8217;s hot.</p><p><code>-webkit-transform</code> takes a type of transformation &#8211; <code>scale</code>, <code>rotate</code>, <code>translate</code>, or <code>skew</code> &#8211; and a value, in parentheses. <code>scale</code> takes a unit-less value, like <code>-webkit-transform: scale(2);</code> <code>rotate</code> takes one <span class='caps'>CSS</span> angle, and <code>skew</code> takes two, like <code>-webkit-transform: rotate(45deg);</code> and <code>translate</code> takes a length or percentage, like <code>-webkit-transform: translate(5em)</code>.</p><p>(There&#8217;s also <code>matrix</code>, which allows you to &#8220;specify a full affine transform matrix&#8221;, and takes six values. I&#8217;ll be damned if I can get it to work though. So perhaps more on that another time.)</p><p><code>-webkit-transition</code> allows you to specify a property, a duration, and a timing function. The property can be <code>none</code>, <code>all</code>, or the name of a specific property, like <code>color</code>, <code>position</code>, or <code>-webkit-transform</code>. The duration is a time in seconds, like <code>2s</code>. The timing function can be the <code>default</code>, <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>, or your can specify your own cubic bezier function with <code>cubic-bezier(x1, y1, x2, y2)</code>. In the examples above, I&#8217;ve specified <code>-webkit-transition: all 1s ease-in-out</code>.</p><p>There are clearly some kinks to be worked out. Just in the super simple examples above you can see that I had to set a different opacity value for the translated paragraph, and that the side borders of the rotated paragraph seem to have vanished. But it&#8217;s a hell of a start.</p><p>And it seems that these simple transforms and transitions are only the first of a range of visual effects that WebKit is adding to <span class='caps'>CSS</span>. I&#8217;m looking forward to seeing what else they implement.</p><p>For more information, check out Hyatt&#8217;s two posts on <a href='http://webkit.org/blog/'>Surfing Safari</a>: <a href='http://webkit.org/blog/130/css-transforms/'><span class='caps'>CSS</span> Transforms</a> and <a href='http://webkit.org/blog/138/css-animation/#comments'><span class='caps'>CSS</span> Animation</a>.</p>
+    
+    <footer>
+      <time datetime="2007-11-14" pubdate="pubdate">November 14, 2007.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/rendering-a-collection/" title="Link to -VI. Rendering a collection of things, and how it can fail.">
+          -VI.
+        </a>
+      </h2>
+      
+      <h1>Rendering a collection of things, and how it can fail.</h1>
+    </hgroup>
+    
+    <p>In <a href='http://rubyonrails.com/'>Rails</a> you can iterate through a collection of stuff, rendering one partial per thing, using:</p>
+
+<pre><code>render(:partial =&gt; &#39;special_thing&#39;,
+  :collection =&gt; a_bunch_of_things)</code></pre>
+<p class='continuation'>Which makes life much easier.</p>
+<p>However, it turns out there&#8217;s this poorly documented requirement for the collection you pass in: It can&#8217;t contain hashes. You&#8217;d think &#8211; which is to say, I thought &#8211; that any enumerable would work just fine, since all Rails is doing is iterating through the collection and rendering the partial once per item.</p>
+
+<p>In fact, if you take a look at <a href='http://api.rubyonrails.com/classes/ActionView/Partials.html'>the documentation for the Rails partial code</a>, you&#8217;ll see that the examples they give clearly imply that using <code>:collection</code> is just shorthand for iterating through an enumerable. (Though the verbose, non-collection example uses <code>for</code>, which probably should be a good enough sign that something&#8217;s wrong.)</p>
+
+<p>But there&#8217;s a note:</p>
+
+<blockquote>
+<p>Due to backwards compatibility concerns, the collection can‘t be one of hashes. Normally you‘d also just keep domain objects, like Active Records, in there.</p>
+</blockquote>
+<p class='continuation'>Why not? I'm not sure.</p>
+<p>What happens when you try? Funny you should ask. Say you&#8217;ve got a collection that looks like:</p>
+
+<pre><code>teams = [
+  { :elephant =&gt; ryan, :soft_shelled_turtle =&gt; mary },
+  { :elephant =&gt; katherine, :soft_shelled_turtle =&gt; jay }
+]</code></pre>
+<p class='continuation'>And you call:</p>
+<pre><code>render(:partial =&gt; &#39;team&#39;, :collection =&gt; teams)</code></pre>
+
+<p>Rails will iterate through the collection, and for each array in <code>teams</code> it will assume that you want to use the value associated with the key identified by your partial&#8217;s name. (And you know what they say about assuming.) In this case, the partial is named <code>team</code>, so Rails will try to render <code>_team.rhtml</code> using <code>teams[0][:team]</code> and <code>teams[1][:team]</code>. And, since the default value of a hash is <code>nil</code>, your partial get passed a series of nils and will probably fail to render. Not exactly what you might hope.</p>
+
+<p>On another hand, if you&#8217;re using the same collection but instead call:</p>
+
+<pre><code>render(:partial =&gt; &#39;elephant&#39;, :collection =&gt; teams)</code></pre>
+<p class='continuation'>you might have better luck, since Rails will pass <code>teams[0][:elephant]</code> and <code>teams[1][:elephant]</code> to your partial, and at least those aren&#8217;t <code>nil</code>. Though are they what you want? Probably not.</p>
+<p>Okay, now that I&#8217;ve explained the problem, here&#8217;s the good news: This will not be a problem in <a href='http://weblog.rubyonrails.org/2007/9/30/rails-2-0-0-preview-release'>Rails 2</a>. <a href='http://dev.rubyonrails.org/ticket/8958'>Ticket #8958</a> removed the deprecated cruft from ActionView, and, in so doing, freed us up to use collections of hashes in our partial rendering.</p>
+
+<p>Aren&#8217;t you excited? Thought so.</p>
+    
+    <footer>
+      <time datetime="2007-10-26" pubdate="pubdate">October 26, 2007.</time>
+      <span class="place">San Francisco, California.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/rails-asset-timestamping/" title="Link to -VII. On browser caching, asset timestamping, and Rails.">
+          -VII.
+        </a>
+      </h2>
+      
+      <h1>On browser caching, asset timestamping, and Rails.</h1>
+    </hgroup>
+    
+    <h2 id='on_browser_caching'>On browser caching.</h2>
+
+<p>Browsers cache files: Javascript, images, CSS, etc. That&#8217;s simple enough, and makes good sense. Why download a file twice when once will do?</p>
+
+<p>Some browsers aren&#8217;t very good at it, though. No name calling here, but things don&#8217;t always work as they should.</p>
+
+<p>For the most part, that&#8217;s not a problem. Asset files are cached precisely because they tend not to change too often. But when they are changing often &#8211; during the testing phases of a project &#8211; is precisely when you want the fewest unpredictable problems possible, and is precisely when you&#8217;re using the older and uglier browsers that have more problems.</p>
+
+<p>So there are ways around the problem. You can force most browsers to reload <em>everything</em>, ignoring what&#8217;s in the cache. You can disable the browser&#8217;s cache. <a href='http://www.nadamac.de/camitools/'>CamiTools</a>, for <a href='http://www.caminobrowser.org/'>Camino</a>, allows you to turn it off; <a href='http://chrispederick.com/work/webdeveloper/'>the Web Developer Extension</a> allows you to do the same thing for <a href='http://www.mozilla.com/firefox/'>Firefox</a>, <a href='http://www.flock.com/'>Flock</a>, <a href='http://www.mozilla.org/products/mozilla1.x/'>Mozilla</a>, and <a href='http://www.mozilla.org/projects/seamonkey/'>SeaMonkey</a>. (An aside: SeaMonkey? When did that happen? Why does <a href='http://www.mozilla.org/'>Mozilla</a> have so many damn projects? Why do they keep changing names? Jeez. Focus people; come on now.) And <a href='http://en.wikipedia.org/wiki/Wikipedia:Clear_your_cache'>so on</a>.</p>
+
+<p>But these are brute-force solutions.</p>
+
+<h2 id='on_asset_timestamping'>On asset timestamping.</h2>
+
+<p>A while back, <a href='http://aviditybytes.com/'>Tim Lucas</a> released <a href='http://agilewebdevelopment.com/plugins/show/35'>an asset timestamping plugin</a> for <a href='http://rubyonrails.com/'>Rails</a> that solved this problem.</p>
+
+<p>The way it works is simple: With the plugin installed, every call to generate a path to a static asset returns a path with the modification timestamp of that file appended to it, as a query string.</p>
+
+<p>So, instead of getting back an image tag like</p>
+
+<pre><code>&lt;img src=&quot;/images/tim_lucas_rules.gif&quot; alt=&quot;&quot; /&gt;</code></pre>
+<p class='continuation'>you&#8217;d get something like</p>
+<pre><code>&lt;img src=&quot;/images/tim_lucas_rules.gif?1147898838&quot; alt=&quot;&quot; /&gt;</code></pre>
+<p class='continuation'>Which is to say, your <code>&lt;img /&gt;</code> tag is now asking specifically for the version of <code>tim_lucas_rules.gif</code> that was last modified 1147898838 seconds after January 1, 1970.</p>
+<p>One important point to note here is that the timestamp query string only changes when the file changes. If that&#8217;s the version of the GIF that the browser has in its cache, then great &#8211; you get it. If not, then it asks the server for a new copy. Since this behavior is tied to the asset file&#8217;s modification time, you&#8217;re always guaranteed to get the right version of the file, browser caching problems notwithstanding.</p>
+
+<p>Another important point is that the timestamp query string actually does not affect what file the server serves up. You will always get whatever version of the file is currently available, not matter what. The point of all this is to force the browser to keep up-to-date. (<a href='http://www.tbray.org/ongoing/When/200x/2006/04/15/Rails-Assets'>Tim Bray isn&#8217;t sure this behavior is appropriate.</a>)</p>
+
+<h2 id='on_asset_timestamping_and_rails'>On asset timestamping and Rails.</h2>
+
+<p>As of <a href='http://api.rubyonrails.com/files/vendor/rails/actionpack/CHANGELOG.html'>Rails 1.12.1 (or April 6th 2006)</a> Rails now uses this scheme by default. Now, when you call a method that generates a path for a static asset file &#8211; like <code>image_tag</code> or <code>stylesheet_path</code> &#8211; you&#8217;ll get back a path that includes a query string with the asset file&#8217;s modification timestamp appended.</p>
+
+<p>The way this works is basically the same as how <a href='http://agilewebdevelopment.com/plugins/show/35'>Tim Lucas&#8217;s plugin</a>. <code>compute_public_path</code> &#8211; the method that&#8217;s called to figure out where an asset file is located &#8211; now calls a new method <code>rails_asset_id,</code> once it&#8217;s figured out the real path. Then <code>rails_asset_id</code> checks the file&#8217;s modification timestamp and returns it to <code>compute_public_path,</code> which appends it as a query string. (<a href='http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html'>All this is documented in the Rails API.</a>)</p>
+
+<p>Simple enough, and good news. Except that hideous URLs are generated.</p>
+
+<p>There&#8217;s also a new configuration variable, <code>RAILS_ASSET_ID,</code> that can be added to any of an application&#8217;s environment files. If that&#8217;s set, the <code>rails_asset_id</code> method returns its value instead of the timestamp. The idea being that you can use that as a version stamp, which might be more useful in some contexts. (And certainly makes for less heinous URLs.)</p>
+
+<p>And, of course, you can also override either <code>rails_asset_id</code> or <code>compute_public_path</code> to provide different behavior. Possibly removing the asset timestamping feature altogether, if you&#8217;re wicked keen on clean URLs.</p>
+    
+    <footer>
+      <time datetime="2006-05-18" pubdate="pubdate">May 18, 2006.</time>
+      <span class="place">Norwich, Vermont.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/three-things-about-pivot/" title="Link to -VIII. Three things about Pivot.">
+          -VIII.
+        </a>
+      </h2>
+      
+      <h1>Three things about Pivot.</h1>
+    </hgroup>
+    
+    <p>Since last summer I&#8217;ve been working with <a href='http://Xenium'>Xenium Group&#8217;s</a> excellent <a href='http://pivotcms.com/'>PivotCMS</a>. At the time I started using it, my only real CMS experience was with <a href='http://textpattern.com/'>TextPattern</a> &#8211; a CMS of a fundamentally different design.</p>
+
+<p>TextPattern is one of the new breed of small CMSes: very dynamic, conditionally structured, blog-oriented (which is to say: chronologically-oriented). Pivot, on the other hand, has been around as long as <a href='http://blogger.com/'>Blogger</a>, and seemed more static and stodgy, overly concerned with things like security and documents.</p>
+
+<p>In hindsight, I realize that Pivot&#8217;s intended audience is not that of TextPattern&#8217;s. As Xenium Group puts it: Pivot&#8217;s &#8220;targeted feature set is not all things to all people.&#8221;</p>
+
+<p>Since last summer I&#8217;ve continued to build sites with TextPattern and Pivot, and have become quite familiar with <a href='http://expressionengine.com/'>ExpressionEngine</a> and <a href='http://github.com/fdv/typo'>Typo</a>. Doing so has made three of Pivot&#8217;s best features stand out clearly.</p>
+
+<h2 id='pivot_is_a_hosted_cms'>Pivot is a hosted CMS.</h2>
+
+<p>Being hosted means no installation, no need to familiarize myself with a client&#8217;s hosting arrangement, no need to talk to tech support, no dealing with <code>.htaccess</code> files, et cetera &#8211; all of which means less time spent by me and less money spent by my client.</p>
+
+<p>That also means that Xenium Group provides support for Pivot&#8217;s operation, as part of the package, which means that my clients don&#8217;t have to wait for a hole in my schedule to get help &#8211; they can just go straight to the source.</p>
+
+<h2 id='pivot_publishes_sites_via_ftp'>Pivot publishes sites via FTP.</h2>
+
+<p>At first I hated this idea: Why not generate the site dynamically? That&#8217;s the slick way to do it. Creating the site in one place, then pushing it to another via FTP seemed unnecessarily complicated and needlessly time-consuming.</p>
+
+<p>Now I get it.</p>
+
+<p>When I redesign a site using ExpressionEngine, I build the new version on a staging server of my own. Then, when it comes time to launch, I have to do a multi-part dance:</p>
+
+<ol>
+<li>The customized installation of EE needs to be moved to the client&#8217;s server, though without disturbing the old site that&#8217;s already in place;</li>
+
+<li>That installation needs to be tweaked to match the client&#8217;s server&#8217;s setup, which <em>always</em> differs from mine; and</li>
+
+<li>The old site needs to be turned off, and the new site turned on, simultaneously, and without interfering with each other.</li>
+</ol>
+
+<p>That operation can go well, or it can go poorly; but it&#8217;s never simple. There&#8217;s always too much room for error.</p>
+
+<p>When I redesign a site that uses Pivot, I can mess about with things on the CMS side to my heart&#8217;s content. Then, when everything&#8217;s ready to go live, I just click the <em>Publish</em> button and the new version gets sent out, via FTP. Simple as can be.</p>
+
+<h2 id='pivot_offers_real_previews'>Pivot offers real previews.</h2>
+
+<p>Every CMS lets you preview articles; that&#8217;s a given. But Pivot&#8217;s the only one I&#8217;ve seen that lets you see a preview that <em>actually shows what the final web page will look like</em>.</p>
+
+<p>Again, this is because Pivot is hosted and publishes its sites statically, via FTP. When you&#8217;re working with Pivot, you&#8217;re working on a Xenium Group server. You make changes to a document and click <em>Preview</em>, and Pivot generates a new version of that document from the appropriate templates, including all images and stylesheets, and serves it up for your previewing pleasure.</p>
+
+<p>Makes sense, right? On the other small CMSes I have to jump through hoops to accomplish the same thing.</p>
+
+<h2 id='in_conclusion'>In conclusion.</h2>
+
+<p>Pivot isn&#8217;t right for every project, but then it isn&#8217;t meant to be. For sites that are suited for Pivot, it offers a solid array of features, plus a few stand-outs. It&#8217;s worth a look.</p>
+    
+    <footer>
+      <time datetime="2006-02-20" pubdate="pubdate">February 20, 2006.</time>
+      <span class="place">Norwich, Vermont.</span>
+    </footer>
+  </article>
+  <article class="hentry">
+    <hgroup>
+      <h2>
+        <a rel="bookmark" href="/articles/the-old-way-of-seeing/" title="Link to -IX. A brief parable.">
+          -IX.
+        </a>
+      </h2>
+      
+      <h1>A brief parable.</h1>
+    </hgroup>
+    
+    <p>On <a href='http://www.sover.net/~mattbucy/'>Matt Bucy&#8217;s</a> recommendation, I&#8217;ve been reading Jonathan Hale&#8217;s <a href='http://www.amazon.com/gp/product/039574010X/'>The Old Way of Seeing</a>. Which is excellent.</p>
+
+<p>In a chapter on paradigms, he points out that in the early 1930s the shape of cars changed radically:</p>
+
+<blockquote>
+<p>In <a href='http://www2.uiah.fi/projects/metodi/191.htm'>Raymond Loewy&#8217;s 1933 illustration of car evolution,</a> it seemed almost as if the previous concepts had been peeled away to reveal the obvious fact of the modern car. [..] In cars, elements that had formerly been discrete &#8211; headlights, fenders, grilles &#8211; were absorbed into the overall shape. Function was not the motive; the newly integrated body panels and fenders and headlights were actually more difficult to repair. [..] Looks were the point.</p>
+</blockquote>
+
+<p>So that&#8217;s what we&#8217;re left with: Cars whose structure has been designed to facilitate style, but whose style has been forgotten. Cars where one type of quality &#8211; ease of repair, longevity, efficiency, strength, stability &#8211; has been traded for another &#8211; superficial beauty, changing fashion &#8211; but the latter has failed, and we&#8217;re left with neither.</p>
+    
+    <footer>
+      <time datetime="2006-02-09" pubdate="pubdate">February  9, 2006.</time>
+      <span class="place">Norwich, Vermont.</span>
+    </footer>
+  </article>
+
+    </div>
+  </body>
+</html>
