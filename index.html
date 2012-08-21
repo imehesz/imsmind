@@ -1,12 +1,18 @@
 ---
-layout: default
-title: Tom Preston-Werner
+layout: home
+title: min(e)d
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<div id="everything">
+      <header>
+	  	<hgroup>
+			<h2>by @imehesz</h2>
+			<h1>min(e)d</h1>
+	    </hgroup>
+	  </header>
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+		<hgroup>
+      		<h2><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</h2></a>
+	  	</hgroup>
     {% endfor %}
-  </ul>
+</div>
