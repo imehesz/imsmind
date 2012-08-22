@@ -12,7 +12,12 @@ title: min(e)d
 	  </header>
     {% for post in site.posts %}
 		<hgroup>
-      		<h2><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</h2></a>
+      		<h2>
+				<span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+				{% for tag in post.tags %}
+					<span class="tag"><a href="/tag/{{ tag }}">{{ tag }}</a></span>
+				{% endfor %}
+			</h2>
 	  	</hgroup>
     {% endfor %}
 </div>

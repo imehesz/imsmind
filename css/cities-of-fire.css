@@ -290,3 +290,23 @@ article footer .place {
   font-family: "IM Fell Great Primer SC", "IM Fell Great Primer Roman", "Baskerville", "Georgia", serif;
 /*  font-variant: small-caps;*/
 }
+
+/* custom stuff */
+.tag {
+	background-color: #ac241f;
+	color: #fff;
+	font-size: 12px;
+	padding: 0px 2px;
+	letter-spacing: 1px;
+}
+
+.tag a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
