@@ -181,7 +181,7 @@ article hgroup + p:first-line {
 
 article p a,
 article li a {
-  border-bottom: 0.0625em solid #ccc; /* 1px */
+  border-bottom: 1px solid #ccc; /* 1px */
 }
 
 article p a:focus, article p a:hover,
@@ -309,4 +309,8 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+
+article img {
+  width: 400px;
 }
